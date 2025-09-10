@@ -1,12 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("About"); // default active link
 
-  const links = ["About", "Advertisers", "Publishers", "Contact"];
+  // Map each link to a route
+  const links = [
+    { name: "About", path: "/about" },
+    { name: "Advertiser", path: "/advertiser" },
+    { name: "Publishers", path: "/publishers" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <motion.nav
@@ -17,33 +24,39 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        <div className="font-extrabold text-2xl md:text-3xl tracking-widest uppercase">
+        <Link
+          href="/"
+          className="font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer"
+        >
           MOBIPERFORM
-        </div>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-10 text-base md:text-lg font-medium tracking-wide">
           {links.map((link) => (
-            <li key={link}>
-              <a
-                href="#"
-                onClick={() => setActive(link)}
+            <li key={link.name}>
+              <Link
+                href={link.path}
+                onClick={() => setActive(link.name)}
                 className={`transition-colors duration-300 ${
-                  active === link
+                  active === link.name
                     ? "text-yellow-300 font-semibold underline underline-offset-4"
                     : "hover:text-gray-200"
                 }`}
               >
-                {link}
-              </a>
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
 
         {/* Button */}
-        <button className="hidden md:block bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-base md:text-lg hover:bg-gray-100 transition-colors duration-300">
+        <Link
+          href="/register"
+          className="hidden md:block bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-base md:text-lg hover:bg-gray-100 transition-colors duration-300"
+        >
           Register Now
-        </button>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -63,25 +76,28 @@ export default function Navbar() {
           className="md:hidden bg-blue-500 px-6 py-4 space-y-4"
         >
           {links.map((link) => (
-            <a
-              key={link}
-              href="#"
+            <Link
+              key={link.name}
+              href={link.path}
               onClick={() => {
-                setActive(link);
+                setActive(link.name);
                 setOpen(false); // close menu after click
               }}
               className={`block text-lg font-medium tracking-wide transition-colors duration-300 ${
-                active === link
+                active === link.name
                   ? "text-yellow-300 font-semibold"
                   : "hover:text-gray-200"
               }`}
             >
-              {link}
-            </a>
+              {link.name}
+            </Link>
           ))}
-          <button className="mt-2 w-full bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors duration-300">
+          <Link
+            href="/register"
+            className="mt-2 w-full block text-center bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors duration-300"
+          >
             Register Now
-          </button>
+          </Link>
         </motion.div>
       )}
     </motion.nav>
