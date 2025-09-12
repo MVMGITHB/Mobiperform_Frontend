@@ -35,41 +35,37 @@ const marketingModels = [
 
 function PerformanceMarketingModel() {
   return (
-    <section className="py-20 bg-gray-50">
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
-            Why Mobile <span className="text-blue-600">Matters</span>
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Performance marketing models that drive installs, clicks, actions,
-            and awareness — all optimized for ROI.
-          </p>
-        </div>
+    <section className="py-20 bg-white">
+      {/* Divider Section - Full Width */}
+      <div className="w-full bg-blue-100 py-6">
+        <h3 className="text-center text-xl sm:text-2xl md:text-3xl font-semibold text-blue-600">
+          Performance Marketing Models We Offer
+        </h3>
+      </div>
 
-        {/* Cards */}
+      {/* Cards Container */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {marketingModels.map((model, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-blue-50 p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {/* Icon + Title */}
-              <div className="flex items-center gap-3 mb-3">
-                {model.icon}
-                <h3 className="text-xl font-bold text-gray-900">
+              <div className="flex items-center gap-3 mb-3 ">
+                <span className="text-black">{model.icon}</span>
+                <h3 className="text-2xl font-md text-blue-600">
                   {model.title}
                 </h3>
               </div>
 
               {/* Subtitle */}
-              <p className="text-base font-semibold text-blue-600 mb-3">
+              <p className="text-2xl font-md text-black mb-3">
                 {model.subtitle}
               </p>
 
               {/* Description */}
-              <p className="text-gray-600 leading-relaxed text-sm">
+              <p className="text-gray-600 leading-relaxed text-xl">
                 {model.desc}
               </p>
             </div>

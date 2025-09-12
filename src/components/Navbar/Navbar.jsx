@@ -2,6 +2,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import { Bebas_Neue } from "next/font/google";
+
+const bebasNeue = Bebas_Neue({
+  weight: "400", // only one weight for Bebas Neue
+  subsets: ["latin"],
+});
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -20,13 +26,13 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="w-full bg-blue-600 text-white shadow-md"
+      className={` w-full bg-blue-600 text-white shadow-md tracking-widest`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className="font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer"
+          className={`${bebasNeue.className} font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer`}
         >
           MOBIPERFORM
         </Link>
