@@ -8,25 +8,25 @@ import {
 
 const marketingModels = [
   {
-    icon: <FaDownload className="text-blue-600 text-2xl" />,
+    icon: <FaDownload className="text-black text-2xl" />,
     title: "CPI",
     subtitle: "Cost Per Install",
     desc: "Pay only for every app install. Drive high-quality users to download and engage with your app.",
   },
   {
-    icon: <FaMousePointer className="text-blue-600 text-2xl" />,
+    icon: <FaMousePointer className="text-black text-2xl" />,
     title: "CPC",
     subtitle: "Cost Per Click",
     desc: "Drive traffic to your app or site. Pay for clicks and measure intent before conversion.",
   },
   {
-    icon: <FaShoppingCart className="text-blue-600 text-2xl" />,
+    icon: <FaShoppingCart className="text-black text-2xl" />,
     title: "CPA",
     subtitle: "Cost Per Action",
     desc: "Pay only for a completed action like signup, purchase, or subscription — ensuring ROI-driven campaigns.",
   },
   {
-    icon: <FaBullhorn className="text-blue-600 text-2xl" />,
+    icon: <FaBullhorn className="text-black text-2xl" />,
     title: "CPM",
     subtitle: "Cost Per Mille",
     desc: "Boost awareness with brand visibility. Pay per 1,000 impressions for high reach campaigns.",
@@ -53,7 +53,7 @@ function PerformanceMarketingModel() {
             >
               {/* Icon + Title */}
               <div className="flex items-center gap-3 mb-3 ">
-                <span className="text-black">{model.icon}</span>
+                <span>{model.icon}</span>
                 <h3 className="text-2xl font-md text-blue-600">
                   {model.title}
                 </h3>

@@ -2,22 +2,24 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
-  weight: "400", // only one weight for Bebas Neue
+  weight: "400",
   subsets: ["latin"],
 });
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("About"); // default active link
+  const [active, setActive] = useState("About");
+  const pathname = usePathname();
 
-  // Map each link to a route
+  const isHome = pathname === "/";
+
   const links = [
-    { name: "About", path: "/about" },
     { name: "Advertiser", path: "/advertiser" },
-    { name: "Publishers", path: "/publishers" },
+    { name: "Publisher", path: "/publisher" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -26,13 +28,19 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={` w-full bg-blue-600 text-white shadow-md tracking-widest`}
+      className={`w-full shadow-md tracking-widest ${
+        isHome ? "bg-blue-600 text-white" : "bg-white text-black"
+      }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <Link
           href="/"
-          className={`${bebasNeue.className} font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer`}
+          className={`${
+            bebasNeue.className
+          } font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer ${
+            isHome ? "text-white" : "text-blue-600"
+          }`}
         >
           MOBIPERFORM
         </Link>
@@ -46,8 +54,10 @@ export default function Navbar() {
                 onClick={() => setActive(link.name)}
                 className={`transition-colors duration-300 ${
                   active === link.name
-                    ? "text-yellow-300 font-semibold underline underline-offset-4"
-                    : "hover:text-gray-200"
+                    ? "text-yellow-400 font-semibold underline underline-offset-4"
+                    : isHome
+                    ? "hover:text-gray-200"
+                    : "text-black hover:text-gray-700"
                 }`}
               >
                 {link.name}
@@ -59,7 +69,11 @@ export default function Navbar() {
         {/* Button */}
         <Link
           href="/register"
-          className="hidden md:block bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-base md:text-lg hover:bg-gray-100 transition-colors duration-300"
+          className={`hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-colors duration-300 ${
+            isHome
+              ? "bg-white text-blue-600 hover:bg-gray-100"
+              : "bg-blue-600 text-white hover:bg-blue-700"
+          }`}
         >
           Register Now
         </Link>
@@ -79,7 +93,9 @@ export default function Navbar() {
           initial={{ height: 0, opacity: 0 }}
           animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
-          className="md:hidden bg-blue-500 px-6 py-4 space-y-4"
+          className={`md:hidden px-6 py-4 space-y-4 ${
+            isHome ? "bg-blue-500 text-white" : "bg-white text-black"
+          }`}
         >
           {links.map((link) => (
             <Link
@@ -87,12 +103,14 @@ export default function Navbar() {
               href={link.path}
               onClick={() => {
                 setActive(link.name);
-                setOpen(false); // close menu after click
+                setOpen(false);
               }}
               className={`block text-lg font-medium tracking-wide transition-colors duration-300 ${
                 active === link.name
-                  ? "text-yellow-300 font-semibold"
-                  : "hover:text-gray-200"
+                  ? "text-yellow-400 font-semibold"
+                  : isHome
+                  ? "hover:text-gray-200"
+                  : "text-black hover:text-gray-700"
               }`}
             >
               {link.name}
@@ -100,7 +118,11 @@ export default function Navbar() {
           ))}
           <Link
             href="/register"
-            className="mt-2 w-full block text-center bg-white text-blue-600 px-6 py-2 rounded-full font-medium text-lg hover:bg-gray-100 transition-colors duration-300"
+            className={`mt-2 w-full block text-center px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${
+              isHome
+                ? "bg-white text-blue-600 hover:bg-gray-100"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
           >
             Register Now
           </Link>
