@@ -1,3 +1,4 @@
+import AdvertiserForm from "@/components/AdvertiserCardHomePage/AdvertiserLeadForm";
 import AdvertiserPage from "@/components/AdvertiserCardHomePage/AdvertiserPage";
 import HowItWorks from "@/components/AdvertiserCardHomePage/AdvertiserPart2";
 import AdvertiserWhyUs from "@/components/AdvertiserCardHomePage/AdvertiserPart3";
@@ -11,6 +12,7 @@ const Advertiser = () => {
       <HowItWorks />
       <PerformanceMarketingModel />
       <AdvertiserWhyUs />
+      <AdvertiserForm />
     </div>
   );
 };
