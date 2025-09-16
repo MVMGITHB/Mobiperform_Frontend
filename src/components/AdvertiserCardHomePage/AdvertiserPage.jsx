@@ -4,23 +4,29 @@ import { motion } from "framer-motion";
 
 const AdvertiserPage = () => {
   return (
-    <section className="relative bg-blue-50 py-16 sm:py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="relative bg-blue-50 py-16 sm:py-24 lg:py-2">
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-1 items-center">
           {/* Left Image */}
-          <motion.div
+
+          <div className=" mt-[-70px] md:mt-1">
+
+             <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex justify-center"
+            className="flex justify-end w-full md:max-w-[700px]"
           >
+
             <img
               src="/images/advertiser/advertiserImage.png"
               alt="Advertiser"
-              className="w-full max-w-[420px] sm:max-w-[500px] lg:max-w-lg rounded-2xl object-cover"
+              className="w-full rounded-2xl object-cover"
             />
           </motion.div>
+          </div>
+         
 
           {/* Right Content */}
           <motion.div
@@ -28,26 +34,27 @@ const AdvertiserPage = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-center lg:text-left"
+            className="flex justify-start pt-1 lg:pt-35"
           >
             {/* Headline */}
-            <h1 className="font-serif italic font-semibold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight text-gray-900 leading-snug">
-              Acquire the <span className="text-blue-600">Right</span> Users &{" "}
+             
+
+             <div className=" max-w-[1000px] flex flex-col justify-center items-center ml-0 md:ml-[-70px] ">
+               <h1 className=" font-bold text-center text-3xl sm:text-4xl lg:text-6xl xl:text-6xl tracking-tight text-gray-900 leading-snug">
+              Acquire the <span className="text-blue-600">Right</span> Users {" "}
               <span className="text-blue-600">Grow</span> Your App
             </h1>
 
-            {/* Subheadline */}
-            <p className="mt-3 sm:mt-4 font-sans text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-400">
-              Like a Pro 🚀
-            </p>
+            
 
             {/* Description */}
-            <p className="mt-5 sm:mt-6 max-w-md mx-auto lg:mx-0 text-base sm:text-lg lg:text-xl font-medium text-gray-700 leading-relaxed">
+            <p className="mt-5 max-w-[500px] sm:mt-6  text-center d mx-auto lg:mx-0 text-base sm:text-lg lg:text-xl font-medium text-gray-700 leading-relaxed">
               AI + Data powered app marketing designed to scale your growth,
-              maximize ROI, and put your app in front of the right audience.
+              maximize ROI
             </p>
 
-            {/* CTA */}
+
+                        {/* CTA */}
             <div className="mt-6 sm:mt-8 flex justify-center lg:justify-start">
               <a
                 href="/register"
@@ -68,6 +75,12 @@ const AdvertiserPage = () => {
                 Register as Advertiser
               </a>
             </div>
+
+             </div>
+           
+           
+
+
           </motion.div>
         </div>
       </div>

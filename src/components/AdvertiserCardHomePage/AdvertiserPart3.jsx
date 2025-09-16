@@ -58,9 +58,9 @@ export default function AdvertiserWhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-snug text-blue-600"
+          className="relative text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold leading-snug text-blue-600 mb-[250px]"
         >
-          Ready to <span className="italic text-black">Scale</span> Your <br />
+          Ready to <span className="italic text-black libre">Scale</span> Your <br />
           App Campaigns?
         </motion.h1>
 
