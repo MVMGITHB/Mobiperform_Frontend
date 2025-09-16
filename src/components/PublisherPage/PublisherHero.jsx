@@ -31,8 +31,9 @@ const PublisherPage = () => {
             className="text-center lg:text-left"
           >
             {/* Headline */}
-            <h1 className="font-serif italic font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight text-gray-900 leading-snug">
-              <span className="text-blue-600">Maximize</span> Your Traffic{" "}
+            <h1 className="font-semibold text-2xl sm:text-3xl md:text-2xl lg:text-5xl xl:text-6xl tracking-tight text-gray-900 leading-snug">
+              <span className="text-blue-600">Maximize</span> Your Traffic
+              <br />
               <span className="text-blue-600">Monetize</span> Smarter
             </h1>
 
