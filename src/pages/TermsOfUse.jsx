@@ -12,8 +12,7 @@ export default function TermsOfUse() {
           </h1>
           <p className="text-gray-700 text-lg sm:text-xl">
             This Agreement sets forth the terms and conditions that apply to the
-            access and use of the website "mobiperform.com", managed by MVM
-            Business Services, India.
+            access and use of the website "mobiperform.com".
           </p>
         </div>
 
