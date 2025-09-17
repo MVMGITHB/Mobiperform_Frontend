@@ -33,3 +33,30 @@ body {
 .libre{
   font-family: "Libre Baskerville"
 }
+
+
+.text-size {
+  /* Responsive below 1426px, fixed above */
+  font-size: clamp(16px, 2vw, 50px);
+}
+
+
+
+@media (min-width: 1300px) {
+  .text-size {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .text-size {
+    font-size: 45px;
+  }
+}
+
+
+@media (min-width: 1450px) {
+  .text-size {
+    font-size: 48px;
+  }
+}

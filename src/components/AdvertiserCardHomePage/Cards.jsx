@@ -13,8 +13,8 @@ export default function AdvertisersPublishers() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 ">
+    <section className="max-w-[1500px] mx-auto  sm:px-8 md:px-12 lg:px-20 py-10 sm:py-16 md:py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-0 ">
         {/* Advertisers Card */}
         <motion.div
           custom={0}

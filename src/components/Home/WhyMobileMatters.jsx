@@ -12,13 +12,13 @@ export default function WhyMobileMatters() {
   return (
     <section className="w-full bg-white">
       {/* Top Section */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12  py-10 sm:py-16 md:py-20 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-[88%]">
           {/* Left text */}
           <div className="flex justify-center md:justify-start">
-            <p className="text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug max-w-2xl text-center md:text-left">
+            <p className="text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-snug lg:px-10  max-w-2xl text-center md:text-left">
               <span className="text-blue-600 font-bold">11+ years</span> in
-              mobile marketing, trusted by global brands & publishers.
+              mobile<br/> marketing, trusted by<br/> global brands &  <br/>publishers.
             </p>
           </div>
 
@@ -27,12 +27,12 @@ export default function WhyMobileMatters() {
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className="bg-gray-100 shadow-md rounded-lg px-6 py-6 text-center w-full max-w-[220px]"
+                className=" shadow-md rounded-lg px-6 py-6 text-center w-full max-w-[200px] h-[170px] bg-[#EFF4FE]"
               >
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900">
+                <h3 className="text-3xl sm:text-[20px] lg:text-[45px] font-medium text-gray-900 popins">
                   {stat.value}
                 </h3>
-                <p className="text-base sm:text-lg lg:text-xl text-gray-600 mt-2">
+                <p className="text-base sm:text-lg lg:text-[22px] text-gray-600 mt-2 popins">
                   {stat.label}
                 </p>
               </div>

@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-full h-32 sm:h-48 md:h-64 lg:h-80 bg-gradient-to-b from-blue-600 via-blue-600/40 to-transparent" />
 
       {/* Content Wrapper */}
-      <div className="relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-14 lg:gap-20">
+      <div className="relative w-full max-w-[1500px] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-14 lg:gap-20">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -18,7 +18,7 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="flex-1 mt-8 sm:mt-10 md:mt-12 lg:mt-16 text-center md:text-left"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold leading-snug text-gray-900 max-w-2xl lg:max-w-3xl">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl text-size lg:text-5xl font-bold leading-snug text-gray-900 max-w-2xl lg:max-w-3xl">
             Driving Growth <br />
             through <span className="text-blue-600">Mobile</span> <br />
             <span className="text-blue-600">Performance Marketing</span>
@@ -34,14 +34,14 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-medium rounded-lg shadow-lg hover:bg-blue-700 transition"
+              className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-medium rounded-2xl shadow-[0_6px_12px_2px_rgba(0,0,0,0.25)] hover:bg-blue-700 transition"
             >
               For Advertisers
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg hover:bg-gray-100 transition"
+              className="px-6 sm:px-8 md:px-12 text-black lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg hover:bg-gray-100 transition"
             >
               For Publishers
             </motion.button>
