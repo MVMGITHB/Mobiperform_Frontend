@@ -22,6 +22,8 @@ export default function WhyMobileMatters() {
             </p>
           </div>
 
+        
+
           {/* Right stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 justify-items-center w-full">
             {stats.map((stat, i) => (
@@ -42,14 +44,16 @@ export default function WhyMobileMatters() {
       </div>
 
       {/* Divider - full width */}
-      <div className="mt-16 mb-16 w-full bg-blue-100 py-8 text-center shadow-2xl">
+      <div className="mt-16 mb-16 w-full bg-blue-100 py-8 text-center shadow-[0_-6px_12px_-2px_rgba(0,0,0,0.25),0_6px_12px_-2px_rgba(0,0,0,0.25)] ">
         <h2 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-md text-gray-900">
           Why Mobile <span className="text-blue-600">Matters</span>
         </h2>
       </div>
 
+       
+
       {/* Bottom Section */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 md:px-12  ">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-20 mt-12">
           <div className="flex flex-col items-center text-center space-y-6 px-4">
             <FaMobileAlt className="text-6xl sm:text-7xl lg:text-8xl text-gray-600" />
@@ -74,8 +78,10 @@ export default function WhyMobileMatters() {
         </div>
 
         {/* Horizontal Black Line */}
-        <div className="w-full border-t border-black my-16"></div>
+       
       </div>
+
+       <div className="w-full border-t border-black my-16"></div>
     </section>
   );
 }
