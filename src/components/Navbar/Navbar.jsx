@@ -28,21 +28,28 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`w-full shadow-md tracking-widest ${
-        isHome ? "bg-blue-600 text-white" : "bg-white text-black"
-      }`}
+      // className={`w-full shadow-md tracking-widest ${
+      //   isHome ? "bg-white text-black" : "bg-white text-black"
+      // }`}
+
+      className="w-full shadow-md tracking-widest bg-white text-black"
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-[1500px] mx-auto flex justify-between items-center px-4 md:px-20 ">
         {/* Logo */}
         <Link
           href="/"
-          className={`${
-            bebasNeue.className
-          } font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer ${
-            isHome ? "text-white" : "text-blue-600"
-          }`}
+          // className={`${
+          //   bebasNeue.className
+          // } font-extrabold text-2xl md:text-3xl tracking-widest uppercase cursor-pointer ${
+          //   isHome ? "text-white" : "text-blue-600"
+          // }`}
         >
-          MOBIPERFORM
+
+         <div className="h-[50px] md:h-[80px] w-[100px] md:w-[150px] ">
+  <img src="/images/logo.png" alt="" className="h-full w-full object-contain" />
+</div>
+
+         
         </Link>
 
         {/* Desktop Links */}
@@ -69,11 +76,8 @@ export default function Navbar() {
         {/* Button */}
         <Link
           href="/register"
-          className={`hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-colors duration-300 ${
-            isHome
-              ? "bg-white text-blue-600 hover:bg-gray-100"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
+          className={`hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-colors duration-300 bg-blue-600 text-white hover:bg-blue-700 
+            `}
         >
           Register Now
         </Link>
