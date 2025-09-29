@@ -31,33 +31,41 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-12">
+    <div className="max-w-7xl mx-auto px-4 py-12 space-y-12 bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
           Talk to Our Expert
         </h2>
-        <p className="text-gray-700 text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
-          At <span className="text-blue-600">Mobiperform</span>, we’re
-          passionate <span className="text-blue-600">about</span> helping
-          businesses grow through powerful{" "}
-          <span className="text-blue-600">mobile marketing</span> solutions.
-          Whether you’re looking to launch an{" "}
-          <span className="text-blue-600">affiliate program</span>, boost app
-          installs, or connect with{" "}
-          <span className="text-blue-600">trusted publishers</span>, our team is
-          here to guide you every step of the way.
+        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
+          At{" "}
+          <span className="text-blue-600 dark:text-blue-400">Mobiperform</span>,
+          we’re passionate{" "}
+          <span className="text-blue-600 dark:text-blue-400">about</span>{" "}
+          helping businesses grow through powerful{" "}
+          <span className="text-blue-600 dark:text-blue-400">
+            mobile marketing
+          </span>{" "}
+          solutions. Whether you’re looking to launch an{" "}
+          <span className="text-blue-600 dark:text-blue-400">
+            affiliate program
+          </span>
+          , boost app installs, or connect with{" "}
+          <span className="text-blue-600 dark:text-blue-400">
+            trusted publishers
+          </span>
+          , our team is here to guide you every step of the way.
         </p>
       </div>
 
       {/* Form + Cards Section */}
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Form */}
-        <div className="flex-1 bg-gray-50 rounded-lg p-6 sm:p-8 shadow-md">
+        <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Name<span className="text-red-500">*</span>
               </label>
               <input
@@ -66,13 +74,13 @@ export default function ContactSection() {
                 placeholder="John"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Email<span className="text-red-500">*</span>
               </label>
               <input
@@ -81,13 +89,13 @@ export default function ContactSection() {
                 placeholder="john.doe@domain.com"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
               />
             </div>
 
             {/* Website */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Website<span className="text-red-500">*</span>
               </label>
               <input
@@ -96,13 +104,13 @@ export default function ContactSection() {
                 placeholder="www.domain.com"
                 value={formData.website}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Phone Number<span className="text-red-500">*</span>
               </label>
               <input
@@ -111,13 +119,13 @@ export default function ContactSection() {
                 placeholder="+49 174 111222333"
                 value={formData.phone}
                 onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
               />
             </div>
 
             {/* Services */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Services<span className="text-red-500">*</span>
               </label>
               <div className="space-y-2">
@@ -135,9 +143,11 @@ export default function ContactSection() {
                       type="checkbox"
                       checked={formData.services.includes(service)}
                       onChange={() => handleServiceChange(service)}
-                      className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                     />
-                    <span className="text-gray-700 text-sm">{service}</span>
+                    <span className="text-gray-700 dark:text-gray-300 text-sm">
+                      {service}
+                    </span>
                   </label>
                 ))}
               </div>
@@ -145,7 +155,7 @@ export default function ContactSection() {
 
             {/* Comment */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Comment
               </label>
               <textarea
@@ -154,14 +164,14 @@ export default function ContactSection() {
                 value={formData.comment}
                 onChange={handleInputChange}
                 rows={5}
-                className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none dark:bg-gray-900 dark:text-white"
               />
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-black text-white py-3 rounded-md font-medium hover:bg-gray-900 transition-colors"
+              className="w-full bg-black text-white py-3 rounded-md font-medium hover:bg-gray-900 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors"
             >
               SEND
             </button>
@@ -169,39 +179,47 @@ export default function ContactSection() {
         </div>
 
         {/* Card Section */}
-        <div className="flex-1 max-w-full border-gray-400 rounded-2xl p-6">
-          <h2 className="text-3xl text-center sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-8">
+        <div className="flex-1 max-w-full border border-gray-300 dark:border-gray-600 rounded-2xl p-6 h-110">
+          <h2 className="text-3xl text-center sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-8">
             Why Mobiperform?
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="border border-gray-200 rounded-lg p-5 text-center shadow-sm">
-              <h3 className="font-bold text-blue-600 mb-2">Experts</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-5 text-center shadow-sm">
+              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">
+                Experts
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Get support from mobile marketing specialists or run your
                 campaigns independently.
               </p>
             </div>
 
-            <div className="border border-gray-200 rounded-lg p-5 text-center shadow-sm">
-              <h3 className="font-bold text-blue-600 mb-2">API</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-5 text-center shadow-sm">
+              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">
+                API
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Automate campaign setup, tracking, and reporting with our
                 advanced APIs.
               </p>
             </div>
 
-            <div className="border border-gray-200 rounded-lg p-5 text-center shadow-sm">
-              <h3 className="font-bold text-blue-600 mb-2">Analytics</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-5 text-center shadow-sm">
+              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">
+                Analytics
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Track installs, clicks, and actions in real time with
                 performance insights.
               </p>
             </div>
 
-            <div className="border border-gray-200 rounded-lg p-5 text-center shadow-sm">
-              <h3 className="font-bold text-blue-600 mb-2">Flexibility</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="border border-gray-300 dark:border-gray-600 rounded-lg p-5 text-center shadow-sm">
+              <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">
+                Flexibility
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Boost ROI with multiple models — CPI, CPC, CPA, and CPM —
                 tailored to your goals.
               </p>
