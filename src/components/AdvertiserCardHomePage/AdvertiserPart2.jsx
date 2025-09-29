@@ -37,34 +37,34 @@ const HowItWorks = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-tight text-black">
             Our <span className="text-blue-500"> Approach</span>
           </h2>
-         
         </div>
-           
-           <div className="w-[90%] mx-auto">
-             <img src="/images/bg1.png" alt="" className=" w-full object-cover "/>
-           </div>
 
-           <div className="flex justify-between mt-4 pl-[40px]">
-             <div>
-              <h6 className="text-blue-600 text-xl font-medium">User Acquisition</h6>
-              <p className=" text-black text-[20px]">Reach right audience </p>
-             </div>
+        <div className="w-[90%] mx-auto">
+          <img src="/images/bg1.png" alt="" className=" w-full object-cover " />
+        </div>
 
+        <div className="flex justify-between mt-4 pl-[40px]">
+          <div>
+            <h6 className="text-blue-600 text-xl font-medium">
+              User Acquisition
+            </h6>
+            <p className=" text-black text-[20px]">Reach right audience </p>
+          </div>
 
-             <div>
-               <h6 className="text-blue-600 text-xl font-medium text-center">Optimization</h6>
-              <p className=" text-black text-xl">AI + data-driven campaigns </p>
-             </div>
+          <div>
+            <h6 className="text-blue-600 text-xl font-medium text-center">
+              Optimization
+            </h6>
+            <p className=" text-black text-xl">AI + data-driven campaigns </p>
+          </div>
 
-
-             <div>
-               <h6 className="text-blue-600 text-xl font-medium text-center">Growth</h6>
-              <p className=" text-black text-xl">from awareness to loyalty  </p>
-             </div>
-           </div>
-       
-
-       
+          <div>
+            <h6 className="text-blue-600 text-xl font-medium text-center">
+              Growth
+            </h6>
+            <p className=" text-black text-xl">from awareness to loyalty  </p>
+          </div>
+        </div>
       </div>
     </section>
   );

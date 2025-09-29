@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaBullhorn, FaPaperPlane } from "react-icons/fa";
 
 export default function AdvertisersPublishers() {
@@ -29,9 +30,11 @@ export default function AdvertisersPublishers() {
           <p className="mt-3 text-gray-300 text-xl text-center">
             Acquire the right users, <br /> Scale your app.
           </p>
-          <button className="mt-6 px-10 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition">
-            Learn More
-          </button>
+          <Link href={"/advertiser"}>
+            <button className="mt-6 px-10 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition">
+              Learn More
+            </button>
+          </Link>
         </motion.div>
 
         {/* Publishers Card */}
@@ -48,9 +51,11 @@ export default function AdvertisersPublishers() {
           <p className="mt-3 text-center text-xl text-blue-100">
             Monetize smarter, <br /> Maximize ROI.
           </p>
-          <button className="mt-6 px-10 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition">
-            Learn More
-          </button>
+          <Link href={"/publisher"}>
+            <button className="mt-6 px-10 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition">
+              Learn More
+            </button>
+          </Link>
         </motion.div>
       </div>
     </section>
