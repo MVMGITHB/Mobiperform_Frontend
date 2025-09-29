@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -31,20 +32,24 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center sm:items-start justify-center md:justify-start gap-4 sm:gap-6">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-medium rounded-2xl shadow-[0_6px_12px_2px_rgba(0,0,0,0.25)] hover:bg-blue-700 transition"
-            >
-              For Advertisers
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-6 sm:px-8 md:px-12 text-black lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg hover:bg-gray-100 transition"
-            >
-              For Publishers
-            </motion.button>
+            <Link href={"/advertiser"}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-medium rounded-2xl shadow-[0_6px_12px_2px_rgba(0,0,0,0.25)] hover:bg-blue-700 transition"
+              >
+                For Advertisers
+              </motion.button>
+            </Link>
+            <Link href={"/publisher"}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-6 sm:px-8 md:px-12 text-black lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg hover:bg-gray-100 transition"
+              >
+                For Publishers
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
 
