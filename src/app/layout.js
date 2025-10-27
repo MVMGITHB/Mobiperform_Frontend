@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { Bebas_Neue } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const bebasNeue = Bebas_Neue({
   weight: "400", // only one weight for Bebas Neue
@@ -51,12 +53,13 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
 
-        <link rel="icon" href="/images/favicon.png" sizes="any" />
+        <link rel="icon" href="/images/favicon-.png" sizes="any" />
       </head>
 
       <body>
         <Navbar />
         {children}
+        <ToastContainer />
         <Footer />
       </body>
     </html>

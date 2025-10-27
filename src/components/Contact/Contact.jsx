@@ -1,5 +1,8 @@
 "use client";
+import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-toastify";
+
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -25,9 +28,37 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
+    console.log("called " )
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await axios.post("http://localhost:5000/api/contact", formData);
+      // setMessage("Form submitted successfully ✅");
+      console.log(response.data);
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        website: "",
+        phone: "",
+        services: [],
+        comment: "",
+      });
+
+      console.log("responsei s" , response.data);
+      if(response.data.success){
+        toast.success(response.data.message);
+      }
+
+
+
+    } catch (error) {
+      console.log(error);
+      // setMessage("Failed to submit form ❌");
+    }
   };
 
   return (
