@@ -95,7 +95,7 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Follow us</h3>
           <div className="flex space-x-4 text-lg">
             <a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61582288139690"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaFacebookF />
@@ -107,7 +107,7 @@ export default function Footer() {
               <FaLinkedinIn />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/mobiperform/"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaInstagram />
