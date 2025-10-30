@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function PublisherForm() {
   const [formData, setFormData] = useState({
@@ -10,7 +13,9 @@ export default function PublisherForm() {
     services: [],
     comment: "",
   });
+  const [loading, setLoading] = useState(false);
 
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -19,6 +24,7 @@ export default function PublisherForm() {
     }));
   };
 
+  // Handle checkbox (services) selection
   const handleServiceChange = (service) => {
     setFormData((prev) => ({
       ...prev,
@@ -28,19 +34,67 @@ export default function PublisherForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Submit form with Axios
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "https://api.mobiperform.com/api/forms/create", // 🔗 Replace with your API URL
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        toast.success("✅ Form submitted successfully!", {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+
+        console.log("Response:", response.data);
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          website: "",
+          phone: "",
+          services: [],
+          comment: "",
+        });
+      }
+    } catch (error) {
+      console.error("❌ Error submitting form:", error);
+      toast.error("❌ Something went wrong. Please try again later.", {
+        position: "top-right",
+        autoClose: 4000,
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-gray-50 rounded-lg mt-12 mb-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 bg-gray-50 rounded-lg mt-12 mb-12 shadow-md">
+      {/* ✅ Toastify Container */}
+      <ToastContainer />
+
       <h2 className="text-2xl sm:text-3xl font-semibold text-blue-600 mb-8 text-center sm:text-left">
         Tell us about your business
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name and Email Row */}
+        {/* Name and Email */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -52,6 +106,7 @@ export default function PublisherForm() {
               placeholder="John"
               value={formData.name}
               onChange={handleInputChange}
+              required
               className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -65,12 +120,13 @@ export default function PublisherForm() {
               placeholder="john.doe@domain.com"
               value={formData.email}
               onChange={handleInputChange}
+              required
               className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
 
-        {/* Website and Phone Row */}
+        {/* Website and Phone */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -82,6 +138,7 @@ export default function PublisherForm() {
               placeholder="www.domain.com"
               value={formData.website}
               onChange={handleInputChange}
+              required
               className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -95,13 +152,16 @@ export default function PublisherForm() {
               placeholder="+49 174 111222333"
               value={formData.phone}
               onChange={handleInputChange}
+              required
+              pattern="^\+?[0-9]{7,15}$"
               className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
         </div>
 
-        {/* Services and Comment Section */}
+        {/* Services and Comment */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Services */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-4">
               Services<span className="text-red-500">*</span>
@@ -132,7 +192,7 @@ export default function PublisherForm() {
             </div>
           </div>
 
-          {/* Comment Section */}
+          {/* Comment */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Comment
@@ -152,9 +212,10 @@ export default function PublisherForm() {
         <div className="pt-4">
           <button
             type="submit"
-            className="w-full bg-black text-white py-3 px-4 rounded-md font-medium tracking-wide hover:bg-gray-900 transition-colors duration-200"
+            disabled={loading}
+            className="w-full bg-black text-white py-3 px-4 rounded-md font-medium tracking-wide hover:bg-gray-900 transition-colors duration-200 disabled:opacity-70"
           >
-            SEND
+            {loading ? "Submitting..." : "SEND"}
           </button>
         </div>
       </form>

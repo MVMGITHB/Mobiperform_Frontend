@@ -1,11 +1,18 @@
 "use client";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
-    email: "",
+    identifier: "",
     password: "",
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -14,14 +21,46 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login data:", formData);
-    // TODO: Add your login logic (API call, authentication, etc.)
+    setLoading(true);
+
+    try {
+      // 🔗 Replace with your actual API endpoint
+      const API_URL = "https://api.mobiperform.com/api/auth/login";
+
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        toast.success("✅ Login successful!");
+        // Optionally save token
+        localStorage.setItem("token", data.token);
+        // Redirect after short delay
+        setTimeout(() => router.push("/dashboard"), 1500);
+      } else {
+        toast.error(data.message || "❌ Invalid email or password");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 px-4">
+      {/* Toast Notifications */}
+      <ToastContainer position="top-right" autoClose={3000} />
+
       <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-8 sm:p-10">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-8">
           Login
@@ -30,13 +69,13 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-gray-700  mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
             </label>
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="identifier"
+              value={formData.identifier}
               onChange={handleChange}
               required
               placeholder="you@example.com"
@@ -63,18 +102,16 @@ const Login = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium text-lg hover:bg-blue-700 transition duration-200"
+            disabled={loading}
+            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium text-lg hover:bg-blue-700 transition duration-200 disabled:opacity-70"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
         <p className="text-center text-gray-600 text-sm mt-6">
           Don’t have an account?{" "}
-          <a
-            href="/register"
-            className="text-blue-600 font-medium hover:underline"
-          >
+          <a href="/register" className="text-blue-600 font-medium hover:underline">
             Register
           </a>
         </p>
