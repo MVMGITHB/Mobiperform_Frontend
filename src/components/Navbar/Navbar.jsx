@@ -33,7 +33,7 @@ export default function Navbar() {
       //   isHome ? "bg-white text-black" : "bg-white text-black"
       // }`}
 
-      className="w-full shadow-md tracking-widest bg-white text-black"
+      className="w-full shadow-md tracking-widest bg-white text-black z-50"
     >
       <div className="max-w-[1500px] mx-auto flex justify-between items-center px-4 md:px-20 ">
         {/* Logo */}

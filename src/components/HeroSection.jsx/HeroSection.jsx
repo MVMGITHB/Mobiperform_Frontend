@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-10 sm:py-16 md:py-1">
+    <section className="relative bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-10 sm:py-16 md:py-0 mt-[-10px]">
       {/* Gradient overlay only on top */}
-      <div className="absolute top-0 left-0 w-full h-32 sm:h-48 md:h-64 lg:h-80 bg-gradient-to-b from-blue-600 via-blue-600/40 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-32 sm:h-48 md:h-64 lg:h-56 bg-gradient-to-b from-blue-600 via-blue-600/40 to-transparent" />
 
       {/* Content Wrapper */}
       <div className="relative w-full max-w-[1500px] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-14 lg:gap-20">
@@ -65,8 +65,8 @@ export default function HeroSection() {
           <Image
             src="/images/home/hero.png"
             alt="Mobile Performance Marketing"
-            width={800}
-            height={700}
+            width={700}
+            height={600}
             className="drop-shadow-2xl w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-[900px] object-contain"
             priority
           />
