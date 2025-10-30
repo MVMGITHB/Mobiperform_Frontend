@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-10 sm:py-16 md:py-20">
+    <section className="relative bg-white px-4 sm:px-8 md:px-12 lg:px-20 py-10 sm:py-16 md:py-1">
       {/* Gradient overlay only on top */}
       <div className="absolute top-0 left-0 w-full h-32 sm:h-48 md:h-64 lg:h-80 bg-gradient-to-b from-blue-600 via-blue-600/40 to-transparent" />
 

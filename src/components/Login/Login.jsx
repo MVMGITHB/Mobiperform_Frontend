@@ -26,7 +26,6 @@ const Login = () => {
     setLoading(true);
 
     try {
-      // 🔗 Replace with your actual API endpoint
       const API_URL = "https://api.mobiperform.com/api/auth/login";
 
       const res = await fetch(API_URL, {
@@ -39,12 +38,13 @@ const Login = () => {
 
       const data = await res.json();
 
+      // ✅ Check the API response properly
       if (res.ok && data.success) {
         toast.success("✅ Login successful!");
-        // Optionally save token
-        localStorage.setItem("token", data.token);
-        // Redirect after short delay
-        setTimeout(() => router.push("/dashboard"), 1500);
+        // Save token (optional)
+        if (data.token) localStorage.setItem("token", data.token);
+        // ✅ Redirect to home page
+        setTimeout(() => router.push("/"), 1500);
       } else {
         toast.error(data.message || "❌ Invalid email or password");
       }

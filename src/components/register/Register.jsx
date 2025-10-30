@@ -50,27 +50,27 @@ export default function Register() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4 sm:px-6 md:px-10 py-10">
+    <section className="flex flex-col md:flex-row items-center gap-5 justify-center  bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4 sm:px-6 md:px-10 py-10">
       {/* Toast Container */}
       <ToastContainer position="top-right" autoClose={3000} />
 
       {/* Left Side Image */}
-      <div className="flex justify-center items-center w-full md:w-1/2 mb-8 md:mb-0">
+      <div className="flex justify-center items-center w-full md:w-3/5 mb-8 md:mb-0">
         <img
           src="/images/l&rImage/registerImage.webp"
           alt="Register on Mobiperform"
           loading="eager"
-          className="w-3/4 sm:w-2/3 md:w-4/5 lg:w-3/4 xl:w-2/3 h-auto object-contain drop-shadow-lg rounded-xl"
+          className="w-full h-auto object-contain drop-shadow-lg rounded-xl"
         />
       </div>
 
       {/* Right Side Form */}
-      <div className="w-full md:w-1/2 max-w-md bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 transition-all duration-300 hover:shadow-blue-200">
+      <div className="w-full md:w-2/5  bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-4 transition-all duration-300 hover:shadow-blue-200">
         <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-6">
           Create Account
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-2">
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
