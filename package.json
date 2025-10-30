@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sitemap": "node public/scripts/generatesitemap.js"
   },
   "dependencies": {
     "@next/font": "^14.2.15",

@@ -96,18 +96,21 @@ export default function Footer() {
           <div className="flex space-x-4 text-lg">
             <a
               href="https://www.facebook.com/profile.php?id=61582288139690"
+              target="_blank"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/mobiperformads"
+              target="_blank"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaLinkedinIn />
             </a>
             <a
               href="https://www.instagram.com/mobiperform/"
+              target="_blank"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaInstagram />

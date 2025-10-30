@@ -92,9 +92,10 @@ const OffersSection = () => {
     <div className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white p-6 md:p-12">
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 sm:mb-75">
-        <h1 className="text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[18rem] font-extrabold text-gray-200 opacity-50 select-none text-center leading-none">
+        {/* // change h1 to h2  */}
+        <h2 className="text-[6rem] sm:text-[8rem] md:text-[12rem] lg:text-[18rem] font-extrabold text-gray-200 opacity-50 select-none text-center leading-none">
           Offers
-        </h1>
+        </h2>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto space-y-16">

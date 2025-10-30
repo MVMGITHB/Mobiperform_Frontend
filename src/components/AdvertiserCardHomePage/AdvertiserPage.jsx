@@ -20,7 +20,8 @@ const AdvertiserPage = () => {
           >
 
             <img
-              src="/images/advertiser/advertiserImage.png"
+            // converts png to webp;
+              src="/images/advertiser/advertiserImage.webp"
               alt="Advertiser"
               className="w-full rounded-2xl object-cover"
             />

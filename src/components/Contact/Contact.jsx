@@ -65,9 +65,10 @@ export default function ContactSection() {
     <div className="max-w-7xl mx-auto px-4 py-12 space-y-12 bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
       {/* Header */}
       <div className="text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+        {/* //add h1  */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
           Talk to Our Expert
-        </h2>
+        </h1>
         <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
           At{" "}
           <span className="text-blue-600 dark:text-blue-400">Mobiperform</span>,

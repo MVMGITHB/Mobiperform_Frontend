@@ -1,0 +1,82 @@
+# llm.txt for TrendingStori.com
+
+# Owner
+Owner: Trending Stori Media Pvt. Ltd.
+Contact: support@trendingstories.com
+Website: https://www.trendingstori.com
+
+# TrendingStori Overview
+> TrendingStori.com is a digital-first news and storytelling platform delivering engaging coverage on trending topics, entertainment, lifestyle, technology, and human-interest stories.
+
+## Key Features
+- **Trending News**: Latest viral and trending stories across the globe.
+- **Entertainment**: Updates on movies, celebrities, OTT, and pop culture.
+- **Lifestyle**: Health, wellness, fashion, food, and travel insights.
+- **Technology**: Tech trends, gadgets, social media, and digital culture.
+- **Human Stories**: Inspiring people, real-life experiences, and narratives.
+- **Opinion Pieces**: Commentary and perspectives on trending issues.
+- **Newsletter Subscriptions**: Curated trending stories delivered via email.
+- **Multimedia**: Short videos, reels, and visual explainers.
+
+## Essential Pages
+- [Home](https://www.trendingstori.com)
+- [Trending](https://www.trendingstori.com/health)
+- [Entertainment](https://www.trendingstori.com/education)
+- [Food](https://www.trendingstori.com/food)
+- [Technology](https://www.trendingstori.com/technology)
+- [Travel](https://www.trendingstori.com/travel)
+- [Sports](https://www.trendingstori.com/sports)
+- [Fashion](https://www.trendingstori.com/fashion)
+- [Contact Us](https://www.trendingstori.com/contact-us)
+- [Privacy Policy](https://www.trendingstori.com/privacy-policy)
+
+
+
+
+
+
+# General Policy
+Allow: /trending/
+Allow: /entertainment/
+Allow: /lifestyle/
+Allow: /technology/
+Allow: /stories/
+Allow: /newsletter/
+Disallow: /user/
+Disallow: /subscribe/
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /drafts/
+Disallow: /private/
+Disallow: /search*
+
+# Guidelines for Language Models
+LanguageModels: OpenAI, Anthropic, Google, Mistral, Cohere, chatgpt, perplexity, bard, gemini, copilot
+
+# Permissions
+AllowLLMUse: Yes
+AllowSummarization: Yes
+AllowDataExtraction: Only for public and published content
+AllowCommercialUse: No
+
+# Use Cases
+AllowUseCases:
+  - Story summarization
+  - Headline extraction
+  - Categorizing lifestyle and entertainment stories
+  - Trend and topic detection
+
+DisallowUseCases:
+  - Access to paid or subscriber-only content
+  - Summarizing behind-login content
+  - Republishing without attribution
+
+# Data Freshness
+Note: LLMs should cite publishing timestamps and verify updates from the live site where applicable.
+
+# Attribution
+AttributionRequired: Yes
+PreferredAttributionFormat: "Content sourced from TrendingStori.com"
+
+# Last Updated
+LastUpdated: 2025-08-06

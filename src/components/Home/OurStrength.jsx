@@ -39,7 +39,8 @@ export default function OurStrengths() {
             className="flex relative z-10 w-[30%]"
           >
             <div className="h-[500px]">
-              <img src="/images/home/robothome.png" alt="Robotic Arm" />
+              {/* //change png to webp   */}
+              <img src="/images/home/robothome.webp" alt="Robotic Arm" /> 
             </div>
           </motion.div>
 

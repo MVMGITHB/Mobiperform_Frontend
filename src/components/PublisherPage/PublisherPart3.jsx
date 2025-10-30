@@ -72,9 +72,10 @@ function PublisherPart3() {
 
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 mt-260">
-        <h1 className="text-[3rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] xl:text-[21rem] font-extrabold text-gray-200 opacity-50 select-none leading-none text-center">
+        {/* // change h1 to h2   */}
+        <h2 className="text-[3rem] sm:text-[8rem] md:text-[12rem] lg:text-[20rem] xl:text-[21rem] font-extrabold text-gray-200 opacity-50 select-none leading-none text-center">
           Monetize
-        </h1>
+        </h2>
       </div>
     </div>
   );
