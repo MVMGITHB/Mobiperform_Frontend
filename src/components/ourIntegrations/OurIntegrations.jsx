@@ -11,7 +11,7 @@ const OurIntegrations = () => {
         <div className="flex-grow h-px bg-gray-300"></div>
       </div>
       <div className="w-full py-6 mt-2">
-  <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-5 md:gap-20">
+  <div className="flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-20">
     <img
       src="/integrationsImage/integrations1.jpg"
       alt="integrations logo"

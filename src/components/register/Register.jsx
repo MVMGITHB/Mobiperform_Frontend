@@ -96,7 +96,8 @@ export default function Register() {
             />
           </div>
 
-          {/* Email */}
+       <div className=" flex justify-between items-end gap-1">
+           {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Email Address
@@ -126,14 +127,15 @@ export default function Register() {
                 setForm({ ...form, phone: cleaned });
               }}
               required
-              placeholder="+1 9876543210"
+              placeholder="+91-9999999999"
               maxLength="15"
               className="w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
             />
-            <p className="text-xs text-gray-500 mt-1">
+            {/* <p className="text-xs text-gray-500 mt-1">
               Enter a valid phone number
-            </p>
+            </p> */}
           </div>
+       </div>
 
           {/* Password */}
           <div>
