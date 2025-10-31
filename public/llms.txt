@@ -1,79 +1,37 @@
-# llm.txt for mobiperform.com
+# Mobile & Performance Marketing Agency | Mobiperform
 
-# Owner
-Owner: Mobi Perform Pvt. Ltd.
-Contact: support@mobiperform.com
-Website: https://www.mobiperform.com
+We’re a mobile performance marketing agency helping brands drive installs, engagement, and ROI through precise campaigns.
 
-# mobiperform Overview
-> mobiperform.com is a digital-first news and storytelling platform delivering engaging coverage on trending topics, entertainment, lifestyle, technology, and human-interest stories.
+## Company Information
 
-## Key Features
-- **Trending News**: Latest viral and trending stories across the globe.
-- **Entertainment**: Updates on movies, celebrities, OTT, and pop culture.
-- **Lifestyle**: Health, wellness, fashion, food, and travel insights.
-- **Technology**: Tech trends, gadgets, social media, and digital culture.
-- **Human Stories**: Inspiring people, real-life experiences, and narratives.
-- **Opinion Pieces**: Commentary and perspectives on trending issues.
-- **Newsletter Subscriptions**: Curated trending stories delivered via email.
-- **Multimedia**: Short videos, reels, and visual explainers.
+- [About Us](https://mobiperform.com/about): This page provides an overview of Mobiperform, detailing the agency's mission, vision, and the services offered to enhance mobile marketing performance.
 
-## Essential Pages
-- [Home](https://mobiperform.com/)
-- [About](https://mobiperform.com/about)
-- [Contact](>https://mobiperform.com//contact)
-- [privacy-policy](https://mobiperform.com//privacy-policy)
-- [terms-of-service](https://mobiperform.com//terms-of-service)
-- [Advertise](https://mobiperform.com//advertise)
-- [Help](https://mobiperform.com//help)
+- [Terms of Use](https://mobiperform.com/terms-of-use): This document outlines the terms and conditions governing the use of Mobiperform's services and website, ensuring users understand their rights and responsibilities.
 
+- [Privacy Policy](https://mobiperform.com/privacy-policy): This page explains how Mobiperform collects, uses, and protects user data, emphasizing the agency's commitment to privacy and data security.
 
+## Services Offered
 
+- [Advertiser](https://mobiperform.com/advertiser): This section is dedicated to advertisers, detailing how Mobiperform can assist in driving app installs and maximizing return on investment through targeted marketing strategies.
 
+- [Advertisers](https://mobiperform.com/#): A more comprehensive look at the services provided specifically for advertisers, including campaign management and performance analytics.
 
+## User Engagement
 
-# General Policy
-Allow: /about/
-Allow: /contact/
-Allow: /privacy-policy/
-Allow: /terms-of-service/
-Allow: /advertise/
-Allow: /help/
-Disallow: /user/
-Disallow: /subscribe/
-Disallow: /admin/
-Disallow: /checkout/
-Disallow: /drafts/
-Disallow: /private/
-Disallow: /search*
+- [Publisher](https://mobiperform.com/publisher): This page focuses on publishers, explaining how they can partner with Mobiperform to monetize their apps and increase user engagement through effective marketing campaigns.
 
-# Guidelines for Language Models
-LanguageModels: OpenAI, Anthropic, Google, Mistral, Cohere, chatgpt, perplexity, bard, gemini, copilot
+## Actions and Support
 
-# Permissions
-AllowLLMUse: Yes
-AllowSummarization: Yes
-AllowDataExtraction: Only for public and published content
-AllowCommercialUse: No
+- [Contact](https://mobiperform.com/contact): Users can find contact information for Mobiperform, allowing them to reach out for inquiries or support regarding services.
 
-# Use Cases
-AllowUseCases:
-  - Story summarization
-  - Headline extraction
-  - Categorizing lifestyle and entertainment stories
-  - Trend and topic detection
+- [Register Now](https://mobiperform.com/register): This link directs users to a registration page where they can sign up for Mobiperform's services, enabling them to start leveraging mobile marketing solutions.
 
-DisallowUseCases:
-  - Access to paid or subscriber-only content
-  - Summarizing behind-login content
-  - Republishing without attribution
+## Additional Resources
 
-# Data Freshness
-Note: LLMs should cite publishing timestamps and verify updates from the live site where applicable.
+- [Mobile & Performance Marketing Agency | Mobiperform](https://mobiperform.com/): This page may contain additional resources or information relevant to Mobiperform's offerings.
 
-# Attribution
-AttributionRequired: Yes
-PreferredAttributionFormat: "Content sourced from mobiperform.com"
+- [Mobiperform | Facebook](https://www.facebook.com/profile.php?id=61582288139690): Further details or resources that may assist users in understanding Mobiperform's services.
 
-# Last Updated
-LastUpdated: 2025-10-30
+- [Mobiperform | LinkedIn](https://www.linkedin.com/company/mobiperformads): Additional content that could provide insights into the agency's operations or marketing strategies.
+
+- [Mobiperform | instagram](https://www.instagram.com/mobiperform/): More information that may be beneficial for users interested in Mobiperform's services or mobile marketing in general.
