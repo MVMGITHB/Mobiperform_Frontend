@@ -13,9 +13,9 @@ export default function AdvertiserWhyUs() {
     <section className="relative bg-white py-12 sm:py-16 lg:py-24 text-center overflow-hidden">
       {/* Background Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        <h1 className="text-[2.5rem] sm:text-[6rem] md:text-[10rem] lg:text-[16rem] font-extrabold text-gray-200 opacity-60 select-none leading-none text-center">
+        <h2 className="text-[2.5rem] sm:text-[6rem] md:text-[10rem] lg:text-[16rem] font-extrabold text-gray-200 opacity-60 select-none leading-none text-center">
           Scale
-        </h1>
+        </h2>
       </div>
 
       {/* Foreground Content */}

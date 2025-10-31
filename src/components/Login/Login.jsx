@@ -62,9 +62,9 @@ const Login = () => {
       <ToastContainer position="top-right" autoClose={3000} />
 
       <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-8 sm:p-10">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-8">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-8">
           Login
-        </h2>
+        </h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Email */}

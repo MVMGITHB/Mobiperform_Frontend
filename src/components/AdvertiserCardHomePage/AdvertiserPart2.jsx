@@ -25,9 +25,9 @@ const HowItWorks = () => {
     <section className="relative bg-white py-10 sm:py-16 lg:py-24 overflow-hidden  overflow-x-hidden ">
       {/* Background Text */}
       <div className="absolute inset-0 flex bg-white items-center justify-center pointer-events-none">
-        <h1 className="text-[3.5rem] sm:text-[6rem] md:text-[12rem] lg:text-[18rem] font-extrabold text-gray-200 opacity-40 select-none text-center leading-none">
+        <h2 className="text-[3.5rem] sm:text-[6rem] md:text-[12rem] lg:text-[18rem] font-extrabold text-gray-200 opacity-40 select-none text-center leading-none">
           Approach
-        </h1>
+        </h2>
       </div>
 
       {/* Content */}
