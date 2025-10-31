@@ -10,7 +10,7 @@ export default function Register() {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    phonenumber: "",
+    phone: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,6 @@ export default function Register() {
     setLoading(true);
 
     try {
-      // 🧩 Replace this with your actual API endpoint
       const API_URL = "https://api.mobiperform.com/api/auth/register";
 
       const res = await fetch(API_URL, {
@@ -35,29 +34,39 @@ export default function Register() {
 
       const data = await res.json();
 
-      if (!res.ok) throw new Error(data.message || "Registration failed");
+      if (!res.ok) {
+        if (data.message?.toLowerCase().includes("already")) {
+          throw new Error(
+            "An account with this email or phone number already exists. Please log in."
+          );
+        }
+        throw new Error(data.message || "Registration failed");
+      }
 
       toast.success(data.message || "✅ Registration successful!");
-      setForm({ name: "", email: "", phonenumber: "", password: "" });
+      setForm({ name: "", email: "", phone: "", password: "" });
 
-      // Redirect to login after a short delay
+      // Redirect to login after success
       setTimeout(() => router.push("/login"), 2000);
     } catch (err) {
-      toast.error(`❌ ${err.message || "Something went wrong"}`);
+      toast.error(`❌ ${err.message || "Something went wrong"}`, {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center gap-5 justify-center  bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4 sm:px-6 md:px-10 py-10">
+    <section className="flex flex-col md:flex-row items-center gap-5 justify-center bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4 sm:px-6 md:px-10 py-10">
       {/* Toast Container */}
       <ToastContainer position="top-right" autoClose={3000} />
 
       {/* Left Side Image */}
       <div className="flex justify-center items-center w-full md:w-3/5 mb-8 md:mb-0">
         <img
-          src="/images/l&rImage/registerImage.webp"
+          src="/images/loginandregisterpage/registerImage.webp"
           alt="Register on Mobiperform"
           loading="eager"
           className="w-full h-auto object-contain drop-shadow-lg rounded-xl"
@@ -65,12 +74,12 @@ export default function Register() {
       </div>
 
       {/* Right Side Form */}
-      <div className="w-full md:w-2/5  bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-4 transition-all duration-300 hover:shadow-blue-200">
+      <div className="w-full md:w-2/5 bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-6 transition-all duration-300 hover:shadow-blue-200">
         <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-6">
           Create Account
         </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-2">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -110,18 +119,16 @@ export default function Register() {
             </label>
             <input
               type="tel"
-              name="phonenumber"
-              value={form.phonenumber}
+              name="phone"
+              value={form.phone}
               onChange={(e) => {
                 const cleaned = e.target.value.replace(/[^0-9+]/g, "");
-                setForm({ ...form, phonenumber: cleaned });
+                setForm({ ...form, phone: cleaned });
               }}
               required
               placeholder="+1 9876543210"
-              // pattern="^\\+?[0-9]{10,13}$"
               maxLength="15"
-              className="w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-lg 
-              focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
+              className="w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
             />
             <p className="text-xs text-gray-500 mt-1">
               Enter a valid phone number

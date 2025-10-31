@@ -3,6 +3,7 @@ import HeroSection from "../HeroSection.jsx/HeroSection";
 import AdvertisersPublishers from "../AdvertiserCardHomePage/Cards";
 import OurStrengths from "./OurStrength";
 import WhyMobileMatters from "./WhyMobileMatters";
+import OurIntegrations from "../ourIntegrations/OurIntegrations";
 
 function Home1() {
   return (
@@ -10,6 +11,7 @@ function Home1() {
       <HeroSection />
       <WhyMobileMatters />
       <OurStrengths />
+      <OurIntegrations />
       <AdvertisersPublishers />
     </div>
   );

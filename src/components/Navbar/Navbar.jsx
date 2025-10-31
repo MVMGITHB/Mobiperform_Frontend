@@ -18,9 +18,11 @@ export default function Navbar() {
   const isHome = pathname === "/";
 
   const links = [
-    { name: "Advertiser", path: "/advertiser" },
-    { name: "Publisher", path: "/publisher" },
-    { name: "Contact", path: "/contact" },
+    {name:"Home",path: "/"},
+    { name: "Advertisers", path: "/advertiser" },
+    { name: "Publishers", path: "/publisher" },
+    { name: "Contact us", path: "/contact" },
+    {name:"Our services", path:"/"}
     // {name:"Register",path:"/register"}
   ];
 
