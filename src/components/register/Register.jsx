@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 export default function Register() {
   const router = useRouter();
@@ -64,7 +65,7 @@ export default function Register() {
       <ToastContainer position="top-right" autoClose={3000} />
 
       {/* Left Side Image */}
-      <div className="flex justify-center items-center w-full md:w-3/5 mb-8 md:mb-0">
+      <div className="flex justify-center items-center w-1/2 lg:w-4/7 md:w-3/5 mb-8 md:mb-0">
         <img
           src="/images/loginandregisterpage/registerImage.webp"
           alt="Register on Mobiperform"
@@ -74,14 +75,20 @@ export default function Register() {
       </div>
 
       {/* Right Side Form */}
-      <div className="w-full md:w-2/5 bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-6 transition-all duration-300 hover:shadow-blue-200">
+      <div className="w-full lg:w-3/7 md:w-2/5 bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-6 transition-all duration-300 hover:shadow-blue-200">
         <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-6">
           Create Account
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Full Name */}
-          <div>
+          <div className="flex flex-col md:flex-row lg:flex-row justify-evenly">
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
+          >
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Full Name
             </label>
@@ -94,9 +101,8 @@ export default function Register() {
               placeholder="Enter your name"
               className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
             />
-          </div>
+          </motion.div>
 
-       <div className=" flex justify-between items-end gap-1">
            {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -112,8 +118,10 @@ export default function Register() {
               className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
             />
           </div>
+          </div>
 
-          {/* Phone Number */}
+          <div className="flex flex-col  md:flex-row lg:flex-row justify-evenly  gap-1">
+            {/* Phone Number */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Phone Number
@@ -135,7 +143,7 @@ export default function Register() {
               Enter a valid phone number
             </p> */}
           </div>
-       </div>
+       
 
           {/* Password */}
           <div>
@@ -151,6 +159,7 @@ export default function Register() {
               placeholder="Enter password"
               className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
             />
+          </div>
           </div>
 
           {/* Consent Checkbox */}
