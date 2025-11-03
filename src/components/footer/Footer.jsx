@@ -115,12 +115,12 @@ export default function Footer() {
             >
               <FaInstagram />
             </a>
-            <a
+            {/* <a
               href="#"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <FaYoutube />
-            </a>
+            </a> */}
           </div>
         </motion.div>
       </div>
