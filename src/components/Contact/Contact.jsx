@@ -1,10 +1,13 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactSection() {
+  const [captchaToken, setCaptchaToken] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,10 +35,17 @@ export default function ContactSection() {
     }));
   };
 
+  console.log("token is " , captchaToken)
+
   // Submit form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if(!captchaToken){
+      toast.error("Please Veriy The Captcha")
+      return
+    }
 
     try {
       //change actual api link 
@@ -63,21 +73,21 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 space-y-12 bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <div className="max-w-7xl mx-auto px-4 py-12 border border-gray-200 border-rounded rounded-xl my-5 space-y-12 bg-white text-black  transition-colors duration-300">
       {/* Toast Container */}
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} />
 
       {/* Header */}
-      <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+      <div className="text-center bg-white">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600  mb-4">
           Talk to Our Expert
         </h1>
-        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
+        <p className="text-gray-900  text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
           At{" "}
-          <span className="text-blue-600 dark:text-blue-400">Mobiperform</span>, we’re passionate{" "}
-          <span className="text-blue-600 dark:text-blue-400">about</span>{" "}
+          <span className="text-blue-600 ">Mobiperform</span>, we’re passionate{" "}
+          <span className="text-blue-600 ">about</span>{" "}
           helping businesses grow through powerful{" "}
-          <span className="text-blue-600 dark:text-blue-400">
+          <span className="text-blue-600 ">
             mobile marketing
           </span>{" "}
           solutions.
@@ -85,13 +95,13 @@ export default function ContactSection() {
       </div>
 
       {/* Form + Info Section */}
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col bg-white lg:flex-row gap-8">
         {/* Form */}
-        <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-lg p-6 sm:p-8 shadow-md">
+        <div className="flex-1 bg-gray-50  rounded-lg p-6 sm:p-8 shadow-md">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Name<span className="text-red-500">*</span>
               </label>
               <input
@@ -101,13 +111,13 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                className="w-full px-3 py-4 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 "
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Email<span className="text-red-500">*</span>
               </label>
               <input
@@ -117,13 +127,13 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                className="w-full px-3 py-4 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 "
               />
             </div>
 
             {/* Website */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Website<span className="text-red-500">*</span>
               </label>
               <input
@@ -133,13 +143,13 @@ export default function ContactSection() {
                 value={formData.website}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                className="w-full px-3 py-4 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Phone Number<span className="text-red-500">*</span>
               </label>
               <input
@@ -150,13 +160,13 @@ export default function ContactSection() {
                 value={formData.phone}
                 onChange={handleInputChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-900 dark:text-white"
+                className="w-full px-3 py-4 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 "
               />
             </div>
 
             {/* Services */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Services<span className="text-red-500">*</span>
               </label>
               <div className="space-y-2">
@@ -176,7 +186,7 @@ export default function ContactSection() {
                       onChange={() => handleServiceChange(service)}
                       className="w-4 h-4 text-blue-600 border-gray-300 dark:border-gray-600 rounded focus:ring-blue-500"
                     />
-                    <span className="text-gray-700 dark:text-gray-300 text-sm">{service}</span>
+                    <span className="text-gray-700  text-sm">{service}</span>
                   </label>
                 ))}
               </div>
@@ -184,7 +194,7 @@ export default function ContactSection() {
 
             {/* Comment */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-bold text-gray-700  mb-2">
                 Comment
               </label>
               <textarea
@@ -193,8 +203,15 @@ export default function ContactSection() {
                 value={formData.comment}
                 onChange={handleInputChange}
                 rows={5}
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none dark:bg-gray-900 dark:text-white"
+                className="w-full px-3 py-2 border border-gray-300  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none "
               />
+            </div>
+
+            <div className="flex justify-start">
+               <ReCAPTCHA
+                     sitekey="6LfXEP0rAAAAAAd8KLvECy4thFW6MPzKHwcMrdTl" 
+                     onChange={(token) => setCaptchaToken(token)}
+                   />
             </div>
 
             {/* Submit */}
@@ -209,8 +226,8 @@ export default function ContactSection() {
         </div>
 
         {/* Why Mobiperform Section */}
-        <div className="flex-1 max-w-full border border-gray-300 dark:border-gray-600 rounded-2xl p-6">
-          <h2 className="text-3xl text-center sm:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-8">
+        <div className="flex-1 max-w-full border border-gray-300  rounded-2xl p-6">
+          <h2 className="text-3xl text-center sm:text-4xl font-bold text-blue-600  mb-8">
             Why Mobiperform?
           </h2>
 
@@ -221,9 +238,9 @@ export default function ContactSection() {
               { title: "Analytics", desc: "Track installs, clicks, and actions in real-time with performance insights." },
               { title: "Flexibility", desc: "Boost ROI with CPI, CPC, CPA, and CPM models tailored to your goals." },
             ].map((item) => (
-              <div key={item.title} className="border border-gray-300 dark:border-gray-600 rounded-lg p-5 text-center shadow-sm">
-                <h3 className="font-bold text-blue-600 dark:text-blue-400 mb-2">{item.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm">{item.desc}</p>
+              <div key={item.title} className="border border-gray-300  rounded-lg p-5 text-center shadow-sm">
+                <h3 className="font-bold text-blue-600  mb-2">{item.title}</h3>
+                <p className="text-gray-700  text-sm">{item.desc}</p>
               </div>
             ))}
           </div>

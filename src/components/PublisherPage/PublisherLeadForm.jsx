@@ -3,8 +3,11 @@ import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function PublisherForm() {
+   const [captchaToken, setCaptchaToken] = useState(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,6 +43,13 @@ export default function PublisherForm() {
     setLoading(true);
 
     try {
+
+
+      if(!captchaToken){
+        toast.error("Verify The Captcha")
+        return
+      }
+
       const response = await axios.post(
         "https://api.mobiperform.com/api/forms/create", // 🔗 Replace with your API URL
         formData,
@@ -51,7 +61,7 @@ export default function PublisherForm() {
       );
 
       if (response.status === 200 || response.status === 201) {
-        toast.success("✅ Form submitted successfully!", {
+        toast.success("Form submitted successfully!", {
           position: "top-right",
           autoClose: 4000,
           hideProgressBar: false,
@@ -72,6 +82,8 @@ export default function PublisherForm() {
           services: [],
           comment: "",
         });
+
+        setCaptchaToken(null);
       }
     } catch (error) {
       console.error("❌ Error submitting form:", error);
@@ -208,12 +220,19 @@ export default function PublisherForm() {
           </div>
         </div>
 
+        <div className="pt-4 flex justify-start">
+                   <ReCAPTCHA
+                sitekey="6LfXEP0rAAAAAAd8KLvECy4thFW6MPzKHwcMrdTl" 
+                onChange={(token) => setCaptchaToken(token)}
+              />
+                </div>
+
         {/* Submit Button */}
         <div className="pt-4">
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-black text-white py-3 px-4 rounded-md font-medium tracking-wide hover:bg-gray-900 transition-colors duration-200 disabled:opacity-70"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium tracking-wide hover:bg-blue-900 transition-colors duration-200 disabled:opacity-70"
           >
             {loading ? "Submitting..." : "SEND"}
           </button>

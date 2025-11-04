@@ -5,6 +5,7 @@ import Footer from "@/components/footer/Footer";
 import { Bebas_Neue } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ContactFloatingButton from "@/components/Home/ContactFloatingButton";
 
 const bebasNeue = Bebas_Neue({
   weight: "400", // only one weight for Bebas Neue
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <ToastContainer />
+        <ContactFloatingButton/>
         <Footer />
       </body>
     </html>
