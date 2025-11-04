@@ -14,6 +14,8 @@ const bebasNeue = Bebas_Neue({
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("Home");
+  const [token, setToken] = useState("");
+  const [userName, setUserName] = useState("")
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -26,27 +28,51 @@ export default function Navbar() {
   ];
 
 
-useEffect(() => {
-  switch (pathname) {
-    case "/":
-      setActive("Home");
-      break;
-    case "/advertiser":
-      setActive("For Advertisers");
-      break;
-    case "/publisher":
-      setActive("For Publishers");
-      break;
-    case "/contact":
-      setActive("Contact us");
-      break;
-    case "/services":
-      setActive("Our services");
-      break;
-    default:
-      setActive("");
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const userName = localStorage.getItem("name")
+    setToken(token);
+    setUserName(userName);
+
+  }, [pathname, userName, token])
+
+  console.log("token", token);
+  console.log("user Name ", userName);
+
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/":
+        setActive("Home");
+        break;
+      case "/advertiser":
+        setActive("For Advertisers");
+        break;
+      case "/publisher":
+        setActive("For Publishers");
+        break;
+      case "/contact":
+        setActive("Contact us");
+        break;
+      case "/services":
+        setActive("Our services");
+        break;
+      default:
+        setActive("");
+    }
+  }, [pathname]);
+
+
+
+  const handleLogout = () => {
+    console.log("handle logou calld ")
+    localStorage.removeItem("token");
+    localStorage.removeItem("name")
+    setToken("");
+    setUserName("")
   }
-}, [pathname]);
+
+
 
 
 
@@ -115,34 +141,66 @@ useEffect(() => {
               <Link
                 href={link.path}
                 onClick={() => setActive(link.name)}
-                className={`relative group transition-all duration-300 ${
-                  active === link.name
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-800 hover:text-blue-600"
-                }`}
+                className={`relative group transition-all duration-300 ${active === link.name
+                  ? "text-blue-600 font-semibold"
+                  : "text-gray-800 hover:text-blue-600"
+                  }`}
               >
                 {link.name}
                 {/* underline animation */}
                 <motion.span
                   layoutId="underline"
-                  className={`absolute left-0 -bottom-1 h-[2px] bg-blue-600 transition-all ${
-                    active === link.name ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute left-0 -bottom-1 h-[2px] bg-blue-600 transition-all ${active === link.name ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 />
               </Link>
             </motion.li>
           ))}
         </motion.ul>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-          <Link
-            href="/register"
-            className="hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md"
-          >
-            Register Now
-          </Link>
-        </motion.div>
 
-       
+        {!token ? (
+          <motion.div className="flex gap-2">
+            {/* Register Button */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href="/register"
+                className="hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+              >
+                Register
+              </Link>
+            </motion.div>
+
+            {/* Login Button */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href="/login"
+                className="hidden md:block px-6 py-2 rounded-full font-medium text-base md:text-lg transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+              >
+                Login
+              </Link>
+            </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div className="flex gap-2">
+            <motion.div className="hidden md:block px-4 py-2 border border-blue-600 rounded-full font-bold text-base md:text-lg transition-all duration-300 bg-white text-blue-600 hover:bg-blue-700 hover:text-white shadow-md" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              {userName ? userName.charAt(0).toUpperCase() : ""}
+
+            </motion.div>
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <div
+                onClick={() => handleLogout()}
+                className="hidden md:block px-6 py-2 cursor-pointer rounded-full font-medium text-base md:text-lg transition-all duration-300 bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+              >
+                Logout
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+
+
+
         <motion.button
           onClick={() => setOpen(!open)}
           whileTap={{ scale: 0.9 }}
@@ -167,9 +225,8 @@ useEffect(() => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={`md:hidden px-6 py-4 space-y-4 ${
-              isHome ? "bg-blue-600 text-white" : "bg-white text-black"
-            } shadow-lg overflow-hidden`}
+            className={`md:hidden px-6 py-4 space-y-4 ${isHome ? "bg-blue-600 text-white" : "bg-white text-black"
+              } shadow-lg overflow-hidden`}
           >
             {links.map((link) => (
               <motion.div
@@ -184,35 +241,85 @@ useEffect(() => {
                     setActive(link.name);
                     setOpen(false);
                   }}
-                  className={`block text-lg font-medium transition-all duration-300 ${
-                    active === link.name
-                      ? "text-yellow-400 font-semibold"
-                      : "hover:text-gray-300"
-                  }`}
+                  className={`block text-lg font-medium transition-all duration-300 ${active === link.name
+                    ? "text-yellow-400 font-semibold"
+                    : "hover:text-gray-300"
+                    }`}
                 >
                   {link.name}
                 </Link>
               </motion.div>
             ))}
 
-            <motion.div
-              variants={mobileLink}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="text-center"
-            >
-              <Link
-                href="/register"
-                onClick={() => setOpen(false)}
-                className={`mt-3 w-full block px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${
-                  isHome
+            {!token ? (
+              <motion.div
+                variants={mobileLink}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="text-center"
+              >
+                <Link
+                  href="/register"
+                  onClick={() => setOpen(false)}
+                  className={`mt-3 w-full block px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${isHome
                     ? "bg-white text-blue-600 hover:bg-gray-100"
                     : "bg-blue-600 text-white hover:bg-blue-700"
-                }`}
+                    }`}
+                >
+                  Register
+                </Link>
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className={`mt-3 w-full block px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${isHome
+                    ? "bg-white text-blue-600 hover:bg-gray-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                    }`}
+                >
+                  Login
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.div
+                variants={mobileLink}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="text-center"
               >
-                Register Now
-              </Link>
-            </motion.div>
+                <Link
+                  href="/register"
+                  onClick={() => setOpen(false)}
+                  className={`mt-3 w-full block px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${isHome
+                    ? "bg-white text-blue-600 hover:bg-gray-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                    }`}
+                >
+{userName.charAt(0).toUpperCase() + userName.slice(1)}
+
+                </Link>
+                <Link
+                  href="/login"
+                  onClick={() => {
+
+                    setOpen(false)
+                    handleLogout()
+
+                  }
+                  }
+                  className={`mt-3 w-full block px-6 py-2 rounded-full font-medium text-lg transition-colors duration-300 ${isHome
+                    ? "bg-white text-blue-600 hover:bg-gray-100"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                    }`}
+                >
+                  Logout
+                </Link>
+              </motion.div>
+            )
+
+            }
+
+
+
           </motion.div>
         )}
       </AnimatePresence>

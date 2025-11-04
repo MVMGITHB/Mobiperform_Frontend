@@ -36,12 +36,16 @@ const Login = () => {
       });
 
       const data = await res.json();
+      // console.log("data" , data.token)
+      if (data.token) {
 
-      // ✅ Check the API response properly
-      if (res.ok && data.success) {
-        toast.success("✅ Login successful!");
+        console.log("Data is " , data)
+        toast.success(" Login successful!");
         // Save token (optional)
         if (data.token) localStorage.setItem("token", data.token);
+        if(data.user) {
+          localStorage.setItem("name" , data.user.name)
+        }
         // ✅ Redirect to home page
         setTimeout(() => router.push("/"), 1500);
       } else {
