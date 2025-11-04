@@ -43,7 +43,7 @@ const HeroAbout = () => {
             >
               Mobiperform
             </motion.span>{" "}
-            — Your Growth Engine for{" "}
+            Your Growth Engine for{" "}
             <span className="text-blue-700">Performance Marketing</span>
           </motion.h1>
 
