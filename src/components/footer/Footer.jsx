@@ -26,12 +26,12 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:text-white transition">
+              <a href="/advertiser" className="hover:text-white transition">
                 Advertisers
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition">
+              <a href="/publisher" className="hover:text-white transition">
                 Publisher
               </a>
             </li>

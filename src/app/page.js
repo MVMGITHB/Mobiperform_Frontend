@@ -29,8 +29,29 @@ export const metadata = {
 };
 
 export default function Home() {
+
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "MobiPerform",
+  "url": "https://mobiperform.com/",
+  "logo": "https://mobiperform.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/mobiperform",
+    "https://www.instagram.com/mobiperform/"
+  ]
+};
+
+
   return (
     <div className="">
+      {/* //add organizationSchema */}
+     <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+
       <Home1 />
     </div>
   );
