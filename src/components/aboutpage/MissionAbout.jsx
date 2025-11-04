@@ -31,7 +31,7 @@ const MissionAbout = () => {
           className="w-full lg:w-1/2 flex justify-center lg:justify-start"
         >
           <Image
-            src="/ourmission.png" // 👉 replace with your image path
+            src="/ourmission.webp" // 👉 replace with your image path
             alt="Our Mission"
             width={520}
             height={420}

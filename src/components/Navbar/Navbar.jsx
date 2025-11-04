@@ -126,7 +126,7 @@ export default function Navbar() {
         >
           <Link href="/">
             <div className="h-[50px] md:h-[80px] w-[100px] md:w-[150px] cursor-pointer">
-              <img src="/images/logo.png" alt="Logo" className="h-full w-full object-contain" />
+              <img src="/images/logo.webp" alt="Logo" className="h-full w-full object-contain" />
             </div>
           </Link>
         </motion.div>

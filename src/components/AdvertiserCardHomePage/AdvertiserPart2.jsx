@@ -6,17 +6,17 @@ const steps = [
   {
     title: "User Acquisition",
     desc: "Reach the right audience",
-    img: "/images/advertiser/pic1.png",
+    img: "/images/advertiser/pic1.webp",
   },
   {
     title: "Optimization",
     desc: "AI + data-driven campaigns",
-    img: "/images/advertiser/pic2.png",
+    img: "/images/advertiser/pic2.webp",
   },
   {
     title: "Growth",
     desc: "From awareness to loyalty",
-    img: "/images/advertiser/pic3.png",
+    img: "/images/advertiser/pic3.webp",
   },
 ];
 
@@ -40,7 +40,7 @@ const HowItWorks = () => {
         </div>
 
         <div className="w-[90%] mx-auto">
-          <img src="/images/bg1.png" alt="" className=" w-full object-cover " />
+          <img src="/images/bg1.webp" alt="" className=" w-full object-cover " />
         </div>
 
         <div className="flex justify-between mt-4 pl-[40px]">

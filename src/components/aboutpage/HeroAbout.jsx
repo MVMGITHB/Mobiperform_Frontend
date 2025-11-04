@@ -79,7 +79,7 @@ const HeroAbout = () => {
           className="relative w-full max-w-[550px] sm:max-w-[600px] lg:max-w-[650px] flex justify-center"
         >
           <Image
-            src="/aboutbanner.png"
+            src="/aboutbanner.webp"
             alt="Mobiperform Illustration"
             width={700}
             height={550}

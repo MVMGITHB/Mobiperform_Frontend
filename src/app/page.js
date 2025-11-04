@@ -18,7 +18,7 @@ export const metadata = {
     siteName: "mobiperform",
     images: [
       {
-        url: "https://mobiperform.com/images/logo.png", // 🔁 Replace with actual OG image
+        url: "https://mobiperform.com/images/logo.webp", // 🔁 Replace with actual OG image
         width: 1200,
         height: 630,
         alt: "mobiperform Hero Banner",
@@ -36,7 +36,7 @@ const organizationSchema = {
   "@type": "Corporation",
   "name": "MobiPerform",
   "url": "https://mobiperform.com/",
-  "logo": "https://mobiperform.com/images/logo.png",
+  "logo": "https://mobiperform.com/images/logo.webp",
   "sameAs": [
     "https://www.facebook.com/mobiperform",
     "https://www.instagram.com/mobiperform/"

@@ -60,7 +60,7 @@ export default function Register() {
       {/* Left Side Image */}
       <div className="w-full mt-4 lg:w-1/2 lg:mt-0 bg-white flex justify-center items-center">
         <img
-          src="/images/loginandregisterpage/signInImage.jpg" // <-- change image path here
+          src="/images/loginandregisterpage/signInImage.webp" // <-- change image path here
           alt="Register illustration"
           className="w-full h-full lg:w-3/4 object-contain"
         />

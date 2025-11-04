@@ -17,7 +17,7 @@ const PublisherPage = () => {
               className="flex justify-end w-full md:max-w-[700px]"
             >
               <img
-                src="/images/publisher/publisher.png"
+                src="/images/publisher/publisher.webp"
                 alt="Publisher"
                 className="w-full rounded-2xl object-cover"
               />

@@ -111,7 +111,7 @@ export default function HeroSection() {
           className="flex-1 flex justify-center mt-8 md:mt-0"
         >
           <Image
-            src="/images/home/hero.png"
+            src="/images/home/hero.webp"
             alt="Mobile Performance Marketing"
             width={700}
             height={600}

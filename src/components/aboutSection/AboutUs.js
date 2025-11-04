@@ -25,7 +25,7 @@ export default function AboutUs() {
         className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0"
       >
         <img
-          src="/aboutbanner.png"
+          src="/aboutbanner.webp"
           alt="About illustration"
           
           className="h-130 object-contain"

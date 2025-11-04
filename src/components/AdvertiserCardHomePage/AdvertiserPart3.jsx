@@ -55,7 +55,8 @@ export default function AdvertiserWhyUs() {
         </motion.div>
 
         {/* Main Headline */}
-        <motion.h1
+        {/* //changes h1 to h2/ */}
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -64,7 +65,7 @@ export default function AdvertiserWhyUs() {
         >
           Ready to <span className="italic text-black">Scale</span> Your <br />
           App Campaigns?
-        </motion.h1>
+        </motion.h2>
 
         {/* CTA Button */}
         <motion.div

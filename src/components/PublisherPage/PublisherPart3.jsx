@@ -33,7 +33,7 @@ function PublisherPart3() {
         className="flex justify-center mt-10 relative z-10"
       >
         <Image
-          src="/images/publisher/publisherp3.png"
+          src="/images/publisher/publisherp3.webp"
           alt="Publisher illustration"
           width={600}
           height={450}
@@ -43,7 +43,8 @@ function PublisherPart3() {
       </motion.div>
 
       {/* Main Headline */}
-      <motion.h1
+      {/* // chnages h1 to h2  */}
+      <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -52,7 +53,7 @@ function PublisherPart3() {
       >
         Start <span className="italic text-black">Monetizing</span> Smarter with{" "}
         <span className="text-blue-700">Mobiperform</span>
-      </motion.h1>
+      </motion.h2>
 
       {/* Button - Centered */}
       <motion.div

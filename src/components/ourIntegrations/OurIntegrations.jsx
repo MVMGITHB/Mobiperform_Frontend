@@ -13,22 +13,22 @@ const OurIntegrations = () => {
       <div className="w-full py-6 mt-2">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-5 md:gap-20">
           <img
-            src="/integrationsImage/integrations1.jpg"
+            src="/integrationsImage/integrations1.webp"
             alt="integrations logo"
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
-            src="/integrationsImage/integrations2.jpg"
+            src="/integrationsImage/integrations2.webp"
             alt="integrations logo"
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
-            src="/integrationsImage/integrations3.jpg"
+            src="/integrationsImage/integrations3.webp"
             alt="integrations logo"
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
-            src="/integrationsImage/integrations4.jpg"
+            src="/integrationsImage/integrations4.webp"
             alt="integrations logo"
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />

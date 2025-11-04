@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "mobiperform",
     images: [
       {
-        url: "https://mobiperform.com/images/logo.png", // 🔁 Replace with actual OG image
+        url: "https://mobiperform.com/images/logo.webp", // 🔁 Replace with actual OG image
         width: 1200,
         height: 630,
         alt: "mobiperform Hero Banner",
@@ -58,7 +58,7 @@ function page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      
+
       <ContactForm />
     </div>
   );

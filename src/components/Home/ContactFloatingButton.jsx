@@ -80,7 +80,7 @@ export default function ContactFloatingButton() {
             />
 
             <Image
-              src="/Call-Button-PNG-Clipart.png"
+              src="/Call-Button-PNG-Clipart.webp"
               alt="Contact Us"
               width={50}
               height={50}

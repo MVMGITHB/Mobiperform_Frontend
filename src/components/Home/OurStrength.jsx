@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const strengths = [
-  { title: "Data + AI", highlight: "Optimization", icon: "/images/t3.png" },
-  { title: "Flexible", highlight: "Campaign Models", icon: "/images/t2.png" },
+  { title: "Data + AI", highlight: "Optimization", icon: "/images/t3.webp" },
+  { title: "Flexible", highlight: "Campaign Models", icon: "/images/t2.webp" },
 ];
 
 const strengths1 = [
-  { title: "Global", highlight: "Reach", icon: "/images/t4.png" },
-  { title: "Dedicated", highlight: "AC Managers", icon: "/images/t1.png" },
+  { title: "Global", highlight: "Reach", icon: "/images/t4.webp" },
+  { title: "Dedicated", highlight: "AC Managers", icon: "/images/t1.webp" },
 ];
 
 export default function OurStrengths() {
@@ -33,7 +33,7 @@ export default function OurStrengths() {
       {/* 👇 Mobile-only image */}
       <div className="block lg:hidden justify-center mx-auto">
         <Image
-          src="/images/advertiser/mobileimg.png"
+          src="/images/advertiser/mobileimg.webp"
           alt="Mobile Strengths Illustration"
           width={450}
           height={300}
@@ -89,7 +89,7 @@ export default function OurStrengths() {
               viewport={{ once: true, amount: 0.4 }}
               className="w-[40%] flex justify-center items-center"
             >
-              <img src="/images/s1.png" alt="Strengths Illustration" />
+              <img src="/images/s1.webp" alt="Strengths Illustration" />
             </motion.div>
 
             {/* Strengths List */}

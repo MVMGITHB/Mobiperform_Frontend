@@ -61,7 +61,7 @@ export default function PrivacyHero() {
         >
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px]">
             <Image
-              src="/privacybanner.png" // change this to your actual image path
+              src="/privacybanner.webp" // change this to your actual image path
               alt="Privacy Illustration"
               fill
               className="object-contain drop-shadow-xl"
