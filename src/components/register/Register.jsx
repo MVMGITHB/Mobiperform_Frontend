@@ -25,7 +25,6 @@ export default function Register() {
 
     try {
       const API_URL = "https://api.mobiperform.com/api/auth/register";
-
       const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -45,8 +44,6 @@ export default function Register() {
 
       toast.success(data.message || "✅ Registration successful!");
       setForm({ name: "", email: "", phone: "", password: "" });
-
-      // Redirect to login after success
       setTimeout(() => router.push("/login"), 2000);
     } catch (err) {
       toast.error(`❌ ${err.message || "Something went wrong"}`, {
@@ -59,132 +56,138 @@ export default function Register() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center gap-5 justify-center bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4 sm:px-6 md:px-10 py-10">
-      {/* Toast Container */}
-      <ToastContainer position="top-right" autoClose={3000} />
-
+    <div className="flex flex-col justify-center items-center lg:flex-row md:flex-row">
       {/* Left Side Image */}
-      <div className="flex justify-center items-center w-full md:w-3/5 mb-8 md:mb-0">
+      <div className="w-full mt-4 lg:w-1/2 lg:mt-0 bg-white flex justify-center items-center">
         <img
-          src="/images/loginandregisterpage/registerImage.webp"
-          alt="Register on Mobiperform"
-          loading="eager"
-          className="w-full h-auto object-contain drop-shadow-lg rounded-xl"
+          src="/images/loginandregisterpage/signInImage.jpg" // <-- change image path here
+          alt="Register illustration"
+          className="w-full h-full lg:w-3/4 object-contain"
         />
       </div>
 
       {/* Right Side Form */}
-      <div className="w-full md:w-2/5 bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-6 transition-all duration-300 hover:shadow-blue-200">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-6">
-          Create Account
-        </h1>
+      <div className="w-full lg:w-1/2">
+        <div className="flex items-center justify-center max-h-screen lg:min-h-screen bg-[#0575E6] lg:px-4">
+          {/* Toast Notifications */}
+          <ToastContainer position="top-right" autoClose={3000} />
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Full Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              placeholder="Enter your name"
-              className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
-            />
-          </div>
+          <div className="bg-white w-full lg:w-2/3  max-w-md lg:rounded-2xl shadow-lg p-8">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-start text-gray-800 mb-8">
+              Create Account
+            </h1>
 
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Email Address
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              placeholder="example@email.com"
-              className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
-            />
-          </div>
+            <form onSubmit={handleSubmit} className="space-y-5">
+             <div className="flex flex-col lg:flex-row gap-2 justify-center content-center">
+               {/* Full Name */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
 
-          {/* Phone Number */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              value={form.phone}
-              onChange={(e) => {
-                const cleaned = e.target.value.replace(/[^0-9+]/g, "");
-                setForm({ ...form, phone: cleaned });
-              }}
-              required
-              placeholder="+1 9876543210"
-              maxLength="15"
-              className="w-full px-4 py-3 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
-            />
-            <p className="text-xs text-gray-500 mt-1">
-              Enter a valid phone number
+              {/* Email */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="example@email.com"
+                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
+             </div>
+
+             <div className="flex flex-col lg:flex-row gap-2 justify-center content-center">
+               {/* Phone */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={(e) => {
+                    const cleaned = e.target.value.replace(/[^0-9+]/g, "");
+                    setForm({ ...form, phone: cleaned });
+                  }}
+                  required
+                  placeholder="+91-9999999999"
+                  maxLength="15"
+                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
+
+              {/* Password */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  name="password"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter password"
+                  className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div> 
+             </div>
+
+              {/* Consent */}
+              <div className="flex items-start space-x-3 mt-4">
+                <input
+                  type="checkbox"
+                  name="consent"
+                  required
+                  className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                />
+                <label className="text-sm text-gray-600 leading-snug">
+                  I agree to receive communication regarding offers and products
+                  through{" "}
+                  <span className="font-medium">Call, E-mail, SMS, WhatsApp</span>{" "}
+                  etc. from <span className="font-medium">mobiperform.com</span> & its partners.
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium text-lg hover:bg-blue-700 transition duration-200 disabled:opacity-70"
+              >
+                {loading ? "Creating Account..." : "Register"}
+              </button>
+            </form>
+
+            <p className="text-center text-gray-600 text-sm mt-6">
+              Already have an account?{" "}
+              <a
+                href="/login"
+                className="text-blue-600 font-medium hover:underline"
+              >
+                Login
+              </a>
             </p>
           </div>
-
-          {/* Password */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              type="password"
-              name="password"
-              value={form.password}
-              onChange={handleChange}
-              required
-              placeholder="Enter password"
-              className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none placeholder-gray-400"
-            />
-          </div>
-
-          {/* Consent Checkbox */}
-          <div className="flex items-start space-x-3 mt-4">
-            <input
-              type="checkbox"
-              name="consent"
-              required
-              className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-            />
-            <label className="text-sm text-gray-600 leading-snug">
-              I agree to receive communication regarding various offers and
-              products through{" "}
-              <span className="font-medium">Call, E-mail, SMS, WhatsApp</span>{" "}
-              etc. from <span className="font-medium">mobiperform.com</span> &
-              its partners.
-            </label>
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium text-lg mt-4 disabled:opacity-70"
-          >
-            {loading ? "Creating Account..." : "Register"}
-          </button>
-        </form>
-
-        <p className="text-sm text-center text-gray-600 mt-6">
-          Already have an account?{" "}
-          <a href="/login" className="text-blue-600 font-medium hover:underline">
-            Login
-          </a>
-        </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
-
 const Login = () => {
   const router = useRouter();
 
@@ -57,19 +56,24 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 px-4">
+    <div className='flex flex-col justify-center items-center lg:flex-row md:flex-row'>
+      <div className='w-full lg:w-1/2 bg-white flex justify-center items-center'>
+      <img src="/images/loginandregisterpage/login.png" alt="login images"/>
+      </div>
+      <div className='w-full lg:w-1/2 bg-[#0575E6]'>
+       <div className="flex items-center max-h-screen md:min-h-screen justify-center lg:min-h-screen bg-[#0575E6] lg:px-4 px-0">
       {/* Toast Notifications */}
       <ToastContainer position="top-right" autoClose={3000} />
 
-      <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-8 sm:p-10">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-center text-gray-800 mb-8">
-          Login
+      <div className="bg-white  w-full lg:w-1/2 max-w-md md:rounded-2xl lg:rounded-2xl shadow-lg p-8 sm:p-10">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-start text-gray-800 mb-8">
+          Login!
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="">
+            <label className="block text-sm font-medium text-gray-700 mb-2 ">
               Email Address
             </label>
             <input
@@ -79,7 +83,7 @@ const Login = () => {
               onChange={handleChange}
               required
               placeholder="you@example.com"
-              className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
 
@@ -95,7 +99,7 @@ const Login = () => {
               onChange={handleChange}
               required
               placeholder="Enter your password"
-              className="w-full px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full px-4 py-3 border border-gray-300 text-black rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
 
@@ -117,7 +121,9 @@ const Login = () => {
         </p>
       </div>
     </div>
-  );
-};
+      </div>
+    </div>
+  )
+}
 
-export default Login;
+export default Login
