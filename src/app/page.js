@@ -1,12 +1,10 @@
+import Script from "next/script";
 import Home1 from "@/components/Home/Home";
-import Image from "next/image";
-
 
 export const metadata = {
   title: "Mobile & Performance Marketing Agency | Mobiperform",
   description:
     "We’re a mobile performance marketing agency helping brands drive installs, engagement, and ROI through precise campaigns",
-    
   alternates: {
     canonical: "https://mobiperform.com",
   },
@@ -18,7 +16,7 @@ export const metadata = {
     siteName: "mobiperform",
     images: [
       {
-        url: "https://mobiperform.com/images/logo.webp", // 🔁 Replace with actual OG image
+        url: "https://mobiperform.com/images/logo.webp",
         width: 1200,
         height: 630,
         alt: "mobiperform Hero Banner",
@@ -29,77 +27,82 @@ export const metadata = {
 };
 
 export default function Home() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "MobiPerform",
+    "url": "https://mobiperform.com/",
+    "logo": "https://mobiperform.com/images/logo.webp",
+    "sameAs": [
+      "https://www.facebook.com/mobiperform",
+      "https://www.instagram.com/mobiperform/",
+    ],
+  };
 
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Corporation",
-  "name": "MobiPerform",
-  "url": "https://mobiperform.com/",
-  "logo": "https://mobiperform.com/images/logo.webp",
-  "sameAs": [
-    "https://www.facebook.com/mobiperform",
-    "https://www.instagram.com/mobiperform/"
-  ]
-};
-
- const breadcrumbSchema = {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
+    "itemListElement": [
       {
         "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://mobiperform.com/",
+        "position": 1,
+        "name": "Home",
+        "item": "https://mobiperform.com/",
       },
       {
         "@type": "ListItem",
-        position: 2,
-        name: "advertiser",
-        item: "https://mobiperform.com/advertiser",
-      },
-       {
-        "@type": "ListItem",
-        position: 3,
-        name: "publisher",
-        item: "https://mobiperform.com/publisher",
+        "position": 2,
+        "name": "Advertiser",
+        "item": "https://mobiperform.com/advertiser",
       },
       {
         "@type": "ListItem",
-        position:4,
-        name: "contact",
-        item: "https://mobiperform.com/contact",
+        "position": 3,
+        "name": "Publisher",
+        "item": "https://mobiperform.com/publisher",
       },
       {
         "@type": "ListItem",
-        position: 5,
-        name: "register",
-        item: "https://mobiperform.com/register",
+        "position": 4,
+        "name": "Contact",
+        "item": "https://mobiperform.com/contact",
       },
       {
         "@type": "ListItem",
-        position: 6,
-        name: "login",
-        item: "https://mobiperform.com/login",
+        "position": 5,
+        "name": "Register",
+        "item": "https://mobiperform.com/register",
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Login",
+        "item": "https://mobiperform.com/login",
       },
     ],
   };
 
   return (
-    <div className="">
-      {/* //add organizationSchema */}
-     <script
+    <>
+      {/* ✅ Use Next.js <Script> for proper JSON-LD output */}
+      <Script
+        id="organization-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
       />
-
-       <script
+      <Script
+        id="breadcrumb-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
       />
 
       <Home1 />
-    </div>
+    </>
   );
 }
