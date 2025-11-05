@@ -27,15 +27,32 @@ export const metadata = {
 };
 
 export default function Home() {
+  // const organizationSchema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Corporation",
+  //   "name": "MobiPerform",
+  //   "url": "https://mobiperform.com/",
+  //   "logo": "https://mobiperform.com/images/logo.webp",
+  //   "sameAs": [
+  //     "https://www.facebook.com/mobiperform",
+  //     "https://www.instagram.com/mobiperform/",
+  //   ],
+  // };
+
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Corporation",
-    "name": "MobiPerform",
-    "url": "https://mobiperform.com/",
-    "logo": "https://mobiperform.com/images/logo.webp",
-    "sameAs": [
-      "https://www.facebook.com/mobiperform",
-      "https://www.instagram.com/mobiperform/",
+    "@type": "Organization",
+    name: "MobiPerform",
+    url: "https://mobiperform.com/",
+    logo: "https://mobiperform.com/images/logo.webp",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: "contact@mobiperform.com",
+        contactType: "customer service",
+        areaServed: "Worldwide",
+        availableLanguage: ["English"],
+      },
     ],
   };
 
