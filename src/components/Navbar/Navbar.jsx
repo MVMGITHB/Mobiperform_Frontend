@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: "For Advertisers", path: "/advertiser" },
     { name: "For Publishers", path: "/publisher" },
     { name: "Contact us", path: "/contact" },
-    { name: "Our services", path: "/" },
+    { name: "Our services", path: "ourservice" },
   ];
 
 
@@ -36,8 +36,8 @@ export default function Navbar() {
 
   }, [pathname, userName, token])
 
-  console.log("token", token);
-  console.log("user Name ", userName);
+  // console.log("token", token);
+  // console.log("user Name ", userName);
 
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Navbar() {
 
 
   const handleLogout = () => {
-    console.log("handle logou calld ")
+    // console.log("handle logou calld ")
     localStorage.removeItem("token");
     localStorage.removeItem("name")
     setToken("");
