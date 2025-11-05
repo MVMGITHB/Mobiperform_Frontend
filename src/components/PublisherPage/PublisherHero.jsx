@@ -19,6 +19,7 @@ const PublisherPage = () => {
               <img
                 src="/images/publisher/publisher.webp"
                 alt="Publisher"
+                sizes=""
                 className="w-full rounded-2xl object-cover"
               />
             </motion.div>

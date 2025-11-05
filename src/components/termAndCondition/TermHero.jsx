@@ -70,6 +70,8 @@ export default function TermHero() {
               src="/termbanner.webp" // change this to your actual image path
               alt="Terms Illustration"
               fill
+              width={""}
+              height={""}
               className="object-contain drop-shadow-xl"
               priority
             />

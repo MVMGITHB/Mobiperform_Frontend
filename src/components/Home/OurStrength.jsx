@@ -59,6 +59,7 @@ export default function OurStrengths() {
             <motion.img
               src="/images/home/robothome.webp"
               alt="Robotic Arm"
+              sizes=""
               className="h-[500px]"
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -89,7 +90,10 @@ export default function OurStrengths() {
               viewport={{ once: true, amount: 0.4 }}
               className="w-[40%] flex justify-center items-center"
             >
-              <img src="/images/s1.webp" alt="Strengths Illustration" />
+              <img 
+              src="/images/s1.webp"
+              sizes="" 
+              alt="Strengths Illustration" />
             </motion.div>
 
             {/* Strengths List */}

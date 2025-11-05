@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Libre_Baskerville } from "next/font/google";
+import Link from "next/link";
 
 // Load Libre Baskerville
 const libreBaskerville = Libre_Baskerville({
@@ -63,12 +64,12 @@ function PublisherPart3() {
         viewport={{ once: true }}
         className="mt-10 flex justify-center z-10 relative mb-20"
       >
-        <a
+        <Link
           href="/register"
           className="inline-block bg-black text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold shadow-lg hover:bg-gray-800 transition"
         >
-          Register as Advertiser
-        </a>
+          Register as Advertiser       
+        </Link>
       </motion.div>
 
       {/* Background Text */}

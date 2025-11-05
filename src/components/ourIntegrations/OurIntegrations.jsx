@@ -15,21 +15,25 @@ const OurIntegrations = () => {
           <img
             src="/integrationsImage/integrations1.webp"
             alt="integrations logo"
+            sizes=""
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
             src="/integrationsImage/integrations2.webp"
             alt="integrations logo"
+            sizes=""
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
             src="/integrationsImage/integrations3.webp"
             alt="integrations logo"
+            sizes=""
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
           <img
             src="/integrationsImage/integrations4.webp"
             alt="integrations logo"
+            sizes=""
             className="w-auto  md:w-40 lg:w-72 h-auto object-contain"
           />
         </div>

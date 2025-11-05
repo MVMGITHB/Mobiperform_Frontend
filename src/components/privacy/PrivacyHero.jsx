@@ -64,6 +64,8 @@ export default function PrivacyHero() {
               src="/privacybanner.webp" // change this to your actual image path
               alt="Privacy Illustration"
               fill
+              width={""}
+              height={""}
               className="object-contain drop-shadow-xl"
               priority
             />

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -24,16 +25,27 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+          {/* change ancher tag to link tag for better seo  */}
           <ul className="space-y-2">
             <li>
-              <a href="/advertiser" className="hover:text-white transition">
+              <Link
+                href="/advertiser"
+                aria-label="Advertiser page"
+                title="Go to advertiser page"
+                className="hover:text-white transition"
+              >
                 Advertisers
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/publisher" className="hover:text-white transition">
+              <Link
+                href="/publisher"
+                aria-label="Publisher page"
+                title="Go to publisher-page"
+                className="hover:text-white transition"
+              >
                 Publisher
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.div>
@@ -49,14 +61,24 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Company</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/about" className="hover:text-white transition">
+              <Link
+                href="/about"
+                aria-label="About-us page"
+                title="Go to about-us page"
+                className="hover:text-white transition"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-white transition">
+              <Link
+                href="/contact"
+                aria-label="Contact-us page"
+                title="Go to Contact-us page"
+                className="hover:text-white transition"
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.div>
@@ -70,16 +92,27 @@ export default function Footer() {
           transition={{ delay: 0.2 }}
         >
           <h3 className="text-white font-semibold mb-4">Legal</h3>
+          {/* change ancher tag to link tag for seo  */}
           <ul className="space-y-2">
             <li>
-              <a href="/terms-of-use" className="hover:text-white transition">
+              <Link
+                href="/terms-of-use"
+                aria-label="term-of-use page"
+                title="Go to term-of-use page"
+                className="hover:text-white transition"
+              >
                 Terms of Use
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy-policy" className="hover:text-white transition">
+              <Link
+                href="/privacy-policy"
+                aria-label="Privacy Policy page"
+                title="Go to privacy-policy page"
+                className="hover:text-white transition"
+              >
                 Privacy Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.div>
@@ -93,28 +126,53 @@ export default function Footer() {
           transition={{ delay: 0.3 }}
         >
           <h3 className="text-white font-semibold mb-4">Follow us</h3>
+          {/* change ancher tag to Link tag  */}
           <div className="flex space-x-4 text-lg">
-            <a
+            <Link
               href="https://www.facebook.com/profile.php?id=61582288139690"
               target="_blank"
+              aria-label="Facebook page"
+              title="Go to facebook page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
-              <FaFacebookF />
-            </a>
-            <a
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className=""
+              >
+                <FaFacebookF />
+              </motion.div>
+            </Link>
+            <Link
               href="https://www.linkedin.com/company/mobiperformads"
               target="_blank"
+              aria-label="LinkedIn"
+              title="Go to linkedIn page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
-              <FaLinkedinIn />
-            </a>
-            <a
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className=""
+              >
+                <FaLinkedinIn />
+              </motion.div>
+            </Link>
+            <Link
               href="https://www.instagram.com/mobiperform/"
               target="_blank"
+              aria-label="Instagram page"
+              title="Go to instagram page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
-              <FaInstagram />
-            </a>
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className=""
+              >
+                <FaInstagram />
+              </motion.div>
+            </Link>
             {/* <a
               href="#"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"

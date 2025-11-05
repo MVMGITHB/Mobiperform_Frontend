@@ -40,7 +40,11 @@ const HowItWorks = () => {
         </div>
 
         <div className="w-[90%] mx-auto">
-          <img src="/images/bg1.webp" alt="" className=" w-full object-cover " />
+          <img 
+          src="/images/bg1.webp" 
+          alt="bg-image"
+          sizes="" 
+          className=" w-full object-cover " />
         </div>
 
         <div className="flex justify-between mt-4 pl-[40px]">
