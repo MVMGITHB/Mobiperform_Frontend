@@ -68,10 +68,10 @@ export default function TermHero() {
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[620px] lg:h-[620px]">
             <Image
               src="/termbanner.webp" // change this to your actual image path
-              alt="Terms Illustration"
+              alt="Terms and Condition"
               fill
-              width={""}
-              height={""}
+              width=""
+              height=""
               className="object-contain drop-shadow-xl"
               priority
             />

@@ -31,7 +31,7 @@ export default function AdvertisersPublishers() {
             Acquire the right users, <br /> Scale your app.
           </p>
           <Link href={"/advertiser"}>
-            <button className="mt-6 px-10 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition">
+            <button className="mt-6 cursor-pointer px-10 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition">
               Learn More
             </button>
           </Link>
@@ -52,7 +52,7 @@ export default function AdvertisersPublishers() {
             Monetize smarter, <br /> Maximize ROI.
           </p>
           <Link href={"/publisher"}>
-            <button className="mt-6 px-10 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition">
+            <button className="mt-6 px-10 cursor-pointer py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition">
               Learn More
             </button>
           </Link>

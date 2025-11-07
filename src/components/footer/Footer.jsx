@@ -47,6 +47,16 @@ export default function Footer() {
                 Publisher
               </Link>
             </li>
+            <li>
+              <Link
+                href="/blogs"
+                aria-label="Publisher page"
+                title="Go to publisher-page"
+                className="hover:text-white transition"
+              >
+                Blogs
+              </Link>
+            </li>
           </ul>
         </motion.div>
 

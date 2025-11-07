@@ -101,7 +101,6 @@ export default function Home() {
 
   return (
     <>
-      {/* ✅ Use Next.js <Script> for proper JSON-LD output */}
       <Script
         id="organization-schema"
         type="application/ld+json"

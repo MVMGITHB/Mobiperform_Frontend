@@ -35,6 +35,9 @@ const nextConfig = {
       },
     ];
   },
+ images: {
+    domains: ["api.mobiperform.com"], // ✅ only hostname, no protocol
+  },
 };
 
 export default nextConfig;

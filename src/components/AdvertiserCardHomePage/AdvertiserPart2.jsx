@@ -47,26 +47,26 @@ const HowItWorks = () => {
           className=" w-full object-cover " />
         </div>
 
-        <div className="flex justify-between mt-4 pl-[40px]">
+        <div className="flex gap-4   justify-between mt-4 md:pl-[40px]">
           <div>
-            <h6 className="text-blue-600 text-xl font-medium">
+            <h6 className="text-blue-600 md:text-xl font-medium">
               User Acquisition
             </h6>
-            <p className=" text-black text-[20px]">Reach right audience </p>
+            <p className=" text-black md:text-[20px]">Reach right audience </p>
           </div>
 
           <div>
-            <h6 className="text-blue-600 text-xl font-medium text-center">
+            <h6 className="text-blue-600 md:text-xl font-medium text-center ">
               Optimization
             </h6>
-            <p className=" text-black text-xl">AI + data-driven campaigns </p>
+            <p className=" text-black md:text-xl text-center">AI + data-driven campaigns </p>
           </div>
 
-          <div>
-            <h6 className="text-blue-600 text-xl font-medium text-center">
+          <div className="">
+            <h6 className="text-blue-600 md:text-xl font-medium text-center ">
               Growth
             </h6>
-            <p className=" text-black text-xl">from awareness to loyalty  </p>
+            <p className=" text-black md:text-xl text-center">from  awareness  to loyalty  </p>
           </div>
         </div>
       </div>

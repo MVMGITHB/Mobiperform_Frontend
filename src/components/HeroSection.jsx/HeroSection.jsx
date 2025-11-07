@@ -93,7 +93,7 @@ export default function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="px-6 sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg text-black hover:bg-gray-100 transition"
+                  className="px-6 sm:px-8 md:px-12 cursor-pointer  lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg text-black hover:bg-gray-100 transition"
                 >
                   For Publishers
                 </motion.button>
