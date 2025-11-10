@@ -9,7 +9,7 @@ export async function generateMetadata({ params }) {
   const slug = await params.slug;
 
 
-  console.log("slug is " , slug)
+  // console.log("slug is " , slug)
   const baseUrl = "https://supernpro.com/";
  
   try {

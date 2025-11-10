@@ -62,8 +62,8 @@ export const ArticleHome = ({ data }) => {
 
   // schema add for seo
 
-   console.log("data home is ", data);
-   console.log("remaiing " , remainingPart)
+  //  console.log("data home is ", data);
+  //  console.log("remaiing " , remainingPart)
 
 
   const jsonLd = {
