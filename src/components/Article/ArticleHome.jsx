@@ -218,9 +218,9 @@ export const ArticleHome = ({ data }) => {
         )} */}
 
           <div className="article ">
-            <div dangerouslySetInnerHTML={{ __html: firstPart }} />
-
-            {!showFull && (
+            <div dangerouslySetInnerHTML={{ __html: firstPart }}/>
+            <div dangerouslySetInnerHTML={{ __html: remainingPart }} />
+            {/* {!showFull && (
 
               <div className="w-[200px] mx-auto">
                 <button
@@ -231,11 +231,11 @@ export const ArticleHome = ({ data }) => {
                 </button>
               </div>
 
-            )}
+            )} */}
 
             {showFull && (<>
 
-              <div dangerouslySetInnerHTML={{ __html: remainingPart }} />
+              {/* <div dangerouslySetInnerHTML={{ __html: remainingPart }} /> */}
 
 
 

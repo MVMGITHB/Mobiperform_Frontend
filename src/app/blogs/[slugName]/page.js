@@ -6,6 +6,7 @@ import axios from "axios";
 export async function generateMetadata({ params }) {
   const { slugName } = await params;
 
+
   try {
     const response = await axios.get(
       `${base_url}/api/blog/getOneBlogByslug/${slugName}`
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }) {
     return {
       title: `${post.mtitle}`,
       description: `${post.mdesc}`,
-      metadataBase: new URL('https://supernpro.com/'),
+      metadataBase: new URL('https://mobiperform.com/'),
       alternates: {
         canonical: './',
 

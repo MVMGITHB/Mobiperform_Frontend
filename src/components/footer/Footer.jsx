@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
+  FaTwitter,
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
@@ -181,6 +182,21 @@ export default function Footer() {
                 className=""
               >
                 <FaInstagram />
+              </motion.div>
+            </Link>
+             <Link
+              href="https://x.com/mobiperform"
+              target="_blank"
+              aria-label="Instagram page"
+              title="Go to instagram page"
+              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
+            >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className=""
+              >
+                <FaTwitter />
               </motion.div>
             </Link>
             {/* <a

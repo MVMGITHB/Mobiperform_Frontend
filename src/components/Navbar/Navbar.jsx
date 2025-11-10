@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: "For Advertisers", path: "/advertiser" },
     { name: "For Publishers", path: "/publisher" },
     { name: "Contact us", path: "/contact" },
-    { name: "Our services", path: "ourservice" },
+    { name: "Our services", path: "our-service" },
   ];
 
 
