@@ -187,8 +187,8 @@ export default function Footer() {
              <Link
               href="https://x.com/mobiperform"
               target="_blank"
-              aria-label="Instagram page"
-              title="Go to instagram page"
+              aria-label="X page"
+              title="Go to x page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <motion.div

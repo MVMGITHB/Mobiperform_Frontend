@@ -11,6 +11,9 @@ export async function generateMetadata({ params }) {
     const response = await axios.get(
       `${base_url}/api/blog/getOneBlogByslug/${slugName}`
     );
+
+
+    console.log("respose is " , response)
     const post = response.data;
     if (!post) {
       return {

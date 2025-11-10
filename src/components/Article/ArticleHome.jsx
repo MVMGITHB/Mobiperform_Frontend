@@ -15,7 +15,7 @@ export const ArticleHome = ({ data }) => {
 
 
 
-  // console.log("data home is ", data)
+ 
 
   const pathname = usePathname();
   // console.log("pathname",data)
@@ -62,6 +62,9 @@ export const ArticleHome = ({ data }) => {
 
   // schema add for seo
 
+   console.log("data home is ", data);
+   console.log("remaiing " , remainingPart)
+
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -89,7 +92,7 @@ export const ArticleHome = ({ data }) => {
     },
     datePublished: formattedDate,
   };
-
+          
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -152,23 +155,23 @@ export const ArticleHome = ({ data }) => {
       <div className=" mx-auto p-4 flex flex-col md:flex-row gap-6">
 
         {/* asidbar comment */}
-        <div className=" w-full md:w-1/5 order-2 md:order-1">
+        {/* <div className=" w-full md:w-1/5 order-2 md:order-1">
           <SideBar pathname={pathname} data={data} />
-        </div>
+        </div> */}
 
-        <div className=" w-full md:w-3/5 mx-auto shadow-md p-4 order-1 md:order-2   overflow-y-auto scrollbar-hide">
-          <h1 className="text-2xl text-gray-600  font-bold text-center mb-4">
+        <div className=" w-full md:w-4/5 mx-auto shadow-md p-4 order-1 md:order-2   overflow-y-auto scrollbar-hide">
+          <h1 className="text-2xl text-gray-900  font-bold text-start mb-4">
             {data.title}
           </h1>
-          <div className="w-full md:w-[800px] h-auto md:h-[400px] relative rounded-md mb-4 overflow-hidden">
+          <div className="w-full md:w-[1150px] h-auto md:h-[500px] relative rounded-md mb-4 overflow-hidden">
 
             {/* note : change to img tag to image tag give url in next.config website base url */}
-            <Image
+            <img
               src={`${base_url}${data.image}`}
               alt="8th Pay Commission"
-              fill
-              className="object-cover rounded-md"
-              priority
+              
+              className="object-contain rounded-md"
+             
             />
           </div>
 
@@ -217,9 +220,9 @@ export const ArticleHome = ({ data }) => {
           <></>
         )} */}
 
-          <div className="article ">
-            <div dangerouslySetInnerHTML={{ __html: firstPart }}/>
-            <div dangerouslySetInnerHTML={{ __html: remainingPart }} />
+          <div className="article px-2 ">
+            <div  dangerouslySetInnerHTML={{ __html: firstPart }}/>
+            <div id="center" dangerouslySetInnerHTML={{ __html: remainingPart }} />
             {/* {!showFull && (
 
               <div className="w-[200px] mx-auto">
@@ -233,7 +236,7 @@ export const ArticleHome = ({ data }) => {
 
             )} */}
 
-            {showFull && (<>
+
 
               {/* <div dangerouslySetInnerHTML={{ __html: remainingPart }} /> */}
 
@@ -260,16 +263,12 @@ export const ArticleHome = ({ data }) => {
 
                 {data?.conclusion && (
                   <div className="mb-2 pt-4">
-                    <h2 className="text-2xl font-bold text-center ">Conclusion:</h2>
+                    {/* <h2 className="text-2xl text-gray-900 font-bold text-center ">Conclusion:</h2> */}
                     <p className="text-[20px] text-black">{data.conclusion}</p>
                   </div>
                 )}
               </div>
-            </>
-
-
-
-            )}
+           
           </div>
 
           {/* {
@@ -365,9 +364,9 @@ export const ArticleHome = ({ data }) => {
 
 
         {/* aside bar comment */}
-        <div className=" w-full md:w-1/5  order-3 md:order-3 ">
+        {/* <div className=" w-full md:w-1/5  order-3 md:order-3 ">
           <RightSideBar pathname={pathname} data={data} />
-        </div>
+        </div> */}
       </div>
       <script
         type="application/ld+json"

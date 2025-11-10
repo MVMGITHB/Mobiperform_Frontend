@@ -80,7 +80,7 @@ export default function ContactSection() {
       {/* Header */}
       <div className="text-center bg-white">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600  mb-4">
-          Talk to Our Expert
+          <span className="text-gray-900">Talk to Our</span> Expert
         </h1>
         <p className="text-gray-900  text-base sm:text-lg lg:text-xl leading-relaxed max-w-6xl mx-auto">
           At{" "}

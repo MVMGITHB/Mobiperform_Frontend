@@ -60,3 +60,15 @@ body {
     font-size: 48px;
   }
 }
+
+
+#center div{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* #center p {
+  display: flex;
+  justify-content: center;
+} */

@@ -41,7 +41,7 @@ function PerformanceMarketingModel() {
       {/* Divider Section - Full Width */}
       <div className="w-full bg-[#EFF4FE] shadow-[0_-6px_12px_-2px_rgba(0,0,0,0.25),0_6px_12px_-2px_rgba(0,0,0,0.25)] py-10 ">
         <h3 className="text-center text-xl sm:text-2xl md:text-5xl popins font-semibold text-blue-600 ">
-          Performance Marketing Models We Offer
+          <span className="text-gray-900">Performance</span> Marketing <span className="text-gray-900">Models</span> We Offer
         </h3>
       </div>
 

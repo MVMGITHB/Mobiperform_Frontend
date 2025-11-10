@@ -28,7 +28,7 @@ export default function AdvertiserWhyUs() {
           viewport={{ once: true }}
           className="text-xl sm:text-3xl lg:text-5xl font-semibold text-blue-600 mb-8 sm:mb-10"
         >
-          Why Advertisers Choose Us
+          <span className="text-gray-900">Why Advertisers</span> Choose Us
         </motion.h2>
 
         {/* Features */}

@@ -108,7 +108,7 @@ const OffersSection = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-12"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold mb-12"
           >
             Our <span className="text-blue-500">Offers</span>
           </motion.h2>
@@ -152,7 +152,7 @@ const OffersSection = () => {
             variants={itemVariants}
             className="text-center md:text-left"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
+            <h2 className="text-3xl text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
               Why <span className="text-blue-500">Publishers</span>
               <br />
               <span className="text-blue-500">Work</span> with
