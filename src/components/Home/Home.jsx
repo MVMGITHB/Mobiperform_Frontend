@@ -9,7 +9,7 @@ import Whyus from "../whyus/WhyUs";
 
 function Home1() {
   return (
-    <div className="w-full">
+    <div className="">
       <HeroSection />
       <WhyMobileMatters />
       <AboutUs/>

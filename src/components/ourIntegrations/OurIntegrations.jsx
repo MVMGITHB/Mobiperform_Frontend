@@ -27,45 +27,43 @@ const OurIntegrations = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-white via-gray-50 to-gray-100">
+    <section className="overflow-x-hidden py-12 sm:py-16 bg-gradient-to-b from-white via-gray-50 to-gray-100">
       {/* Title Section */}
       <motion.div
-        className="flex items-center justify-center mb-10"
+        className="flex items-center justify-center mb-10 px-4"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={titleVariant}
       >
-        <div className="flex items-center justify-center mb-10 w-full px-6 sm:px-12">
+        <div className="flex items-center justify-center w-full">
           <motion.div
             className="flex-grow h-[2px] bg-gradient-to-l from-gray-900 via-gray-500 to-gray-200 animate-gradient-x"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-          ></motion.div>
-
+          />
           <motion.h2
-            className="px-4 text-gray-800 text-2xl sm:text-3xl font-bold text-center whitespace-nowrap"
+            className="px-3 text-gray-800 text-xl sm:text-3xl font-bold text-center whitespace-nowrap"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Our Integrations
           </motion.h2>
-
           <motion.div
             className="flex-grow h-[2px] bg-gradient-to-r from-gray-900 via-gray-100 to-gray-200 animate-gradient-x"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-          ></motion.div>
+          />
         </div>
       </motion.div>
 
-      {/* Logos */}
+      {/* Logos Section */}
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 justify-items-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -75,15 +73,15 @@ const OurIntegrations = () => {
               key={i}
               custom={i}
               variants={logoVariant}
-              whileHover={{ scale: 1.1, rotate: 1 }}
-              className="flex justify-center items-center bg-white shadow-md rounded-2xl p-4 hover:shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              className="flex justify-center items-center bg-white shadow-md rounded-xl p-3 sm:p-4 hover:shadow-lg transition-all duration-300 w-full max-w-[200px]"
             >
-              <img
+              <Image
                 src={src}
                 alt={`integration-logo-${i + 1}`}
-                className="w-28 sm:w-36 md:w-44 lg:w-56 h-auto object-contain"
-                width={""}
-                height={""}
+                width={400}
+                height={200}
+                className="object-contain w-full h-auto"
               />
             </motion.div>
           ))}

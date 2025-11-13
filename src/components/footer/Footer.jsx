@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 px-6 md:px-16 py-12">
+    <footer className="bg-gradient-to-b  from-gray-900 to-black text-gray-300 px-6 md:px-16 py-12">
       <div className="max-w-8xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
         {/* Quick Links */}
         <motion.div
@@ -138,7 +138,7 @@ export default function Footer() {
         >
           <h3 className="text-white font-semibold mb-4">Follow us</h3>
           {/* change ancher tag to Link tag  */}
-          <div className="flex space-x-4 text-lg">
+          <div className="flex space-x-2 text-lg">
             <Link
               href="https://www.facebook.com/profile.php?id=61582288139690"
               target="_blank"
