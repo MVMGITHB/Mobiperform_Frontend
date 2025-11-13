@@ -56,11 +56,7 @@ export default function WhyUs() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {title.map((word, i) => (
-            <motion.span key={i} variants={textWave} custom={i}>
-              {word}
-            </motion.span>
-          ))}
+        Why Choose <span className="text-blue-700"> Mobiperform ?</span> 
         </motion.h2>
 
         <motion.div

@@ -69,8 +69,8 @@ export default function TermHero() {
             <Image
               src="/termbanner.webp"
               alt="Terms and Condition"
-              height=""
-              width=""
+              height="620"
+              width="620"
               className="object-contain drop-shadow-xl"
               priority
             />

@@ -8,9 +8,6 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value: `
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
-              img-src 'self' data: https://mobiperform.com https://www.google-analytics.com;
-              connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;
               frame-src 'self';
             `.replace(/\s{2,}/g, ' '),
           },

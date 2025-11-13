@@ -24,6 +24,8 @@ export default function Register() {
     setLoading(true);
 
     try {
+
+      console.log("called ")
       const API_URL = "https://api.mobiperform.com/api/auth/register";
       const res = await fetch(API_URL, {
         method: "POST",

@@ -6,7 +6,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Mobiperform Blog | Mobile Performance Marketing Insights & Strategies",
   description:
-    "Stay updated with the latest trends, tips, and strategies in mobile performance marketing. Explore blogs on user acquisition, app monetization, advertising optimization, and growth marketing.",
+    "Explore expert blogs on mobile performance marketing, user acquisition, app growth, and monetization trends",
   metadataBase: new URL("https://mobiperform.com"),
   alternates: {
     canonical: "https://mobiperform.com/blogs",
@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     title: "Mobiperform Blog | Mobile Performance Marketing Insights & Strategies",
     description:
-      "Explore the latest in mobile performance marketing, user acquisition, and growth strategies from Mobiperform.",
+      "Explore expert blogs on mobile performance marketing, user acquisition, app growth, and monetization trends",
     url: "https://mobiperform.com/blogs",
     siteName: "Mobiperform",
     images: [

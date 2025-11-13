@@ -48,7 +48,7 @@ export default function AboutUs() {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold text-sky-700 mb-6"
         >
-          About Us
+          <span className="text-gray-900">About</span> Us
         </motion.h2>
 
         <motion.p

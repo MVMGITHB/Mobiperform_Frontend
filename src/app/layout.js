@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <ToastContainer />
-        {/* <ContactFloatingButton /> */}
+        <ContactFloatingButton />
         <Footer />
       </body>
     </html>

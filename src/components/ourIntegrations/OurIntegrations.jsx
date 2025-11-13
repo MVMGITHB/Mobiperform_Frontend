@@ -52,7 +52,7 @@ const OurIntegrations = () => {
             Our Integrations
           </motion.h2>
           <motion.div
-            className="flex-grow h-[2px] bg-gradient-to-r from-gray-900 via-gray-100 to-gray-200 animate-gradient-x"
+            className="flex-grow h-[2px] bg-gradient-to-r from-gray-900 via-gray-500 to-gray-200 animate-gradient-x"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}

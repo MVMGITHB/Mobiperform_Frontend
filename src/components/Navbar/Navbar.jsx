@@ -54,7 +54,7 @@ export default function Navbar() {
       case "/contact":
         setActive("Contact us");
         break;
-      case "/services":
+      case "/our-service":
         setActive("Our services");
         break;
       default:
@@ -126,12 +126,12 @@ export default function Navbar() {
         >
           <Link href="/">
             <div className="h-[50px] md:h-[80px] w-[100px] md:w-[150px] cursor-pointer">
-              <img 
-              src="/images/logo.webp" 
-              alt="Logo" 
-              height=""
-              width=""
-              className="h-full w-full object-contain" />
+              <img
+                src="/images/logo.webp"
+                alt="Logo"
+                height=""
+                width=""
+                className="h-full w-full object-contain" />
             </div>
           </Link>
         </motion.div>
@@ -299,7 +299,7 @@ export default function Navbar() {
                     : "bg-blue-600 text-white hover:bg-blue-700"
                     }`}
                 >
-{userName.charAt(0).toUpperCase() + userName.slice(1)}
+                  {userName.charAt(0).toUpperCase() + userName.slice(1)}
 
                 </Link>
                 <Link
