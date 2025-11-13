@@ -6,12 +6,6 @@ const nextConfig = {
         source: "/(.*)",
         headers: [
           {
-            key: "Content-Security-Policy",
-            value: `
-              frame-src 'self';
-            `.replace(/\s{2,}/g, ' '),
-          },
-          {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
           },
