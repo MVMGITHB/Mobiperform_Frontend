@@ -4,15 +4,15 @@ import React from 'react'
 export const metadata = {
   title: "Login | Mobiperform - Access Your Mobile Marketing Dashboard",
   description:
-    "Log in to your Mobiperform account to manage mobile performance campaigns, analyze results, and track conversions in real time.",
+    "Access your Mobiperform account to manage mobile campaigns, analyze results, and track performance in real time",
   metadataBase: new URL("https://mobiperform.com"),
   alternates: {
-    canonical: "./",
+    canonical: "https://mobiperform.com/login",
   },
   openGraph: {
     title: "Login | Mobiperform - Access Your Mobile Marketing Dashboard",
     description:
-      "Sign in to your Mobiperform dashboard to monitor campaign performance, optimize mobile ads, and grow your app effectively.",
+      "Access your Mobiperform account to manage mobile campaigns, analyze results, and track performance in real time",
     url: "https://mobiperform.com/login",
     siteName: "Mobiperform",
     images: [
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Login | Mobiperform - Access Your Mobile Marketing Dashboard",
     description:
-      "Log in to Mobiperform to access real-time mobile marketing analytics and manage performance campaigns efficiently.",
+      "Access your Mobiperform account to manage mobile campaigns, analyze results, and track performance in real time.",
     images: ["https://mobiperform.com/og-image.jpg"],
   },
 };

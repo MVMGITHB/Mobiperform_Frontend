@@ -4,7 +4,7 @@ import React from 'react'
 export const metadata = {
   title: "Register | Mobiperform - Start Your Mobile Marketing Journey",
   description:
-    "Create your Mobiperform account and start optimizing your mobile performance campaigns. Join our platform to access analytics, campaign tracking, and performance growth tools.",
+    "Create your Mobiperform account to launch and optimize campaigns with powerful analytics, tracking, and performance growth tools.",
   metadataBase: new URL("https://mobiperform.com"),
   alternates: {
     canonical: "./",
@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "Register | Mobiperform - Start Your Mobile Marketing Journey",
     description:
-      "Sign up to Mobiperform and unlock tools for mobile performance marketing success. Manage campaigns, track results, and grow your app effectively.",
+      "Create your Mobiperform account to launch and optimize campaigns with powerful analytics, tracking, and performance growth tools.",
     url: "https://mobiperform.com/register",
     siteName: "Mobiperform",
     images: [

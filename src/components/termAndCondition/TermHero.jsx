@@ -18,7 +18,7 @@ export default function TermHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-blue-80 via-white to-blue-400 py-4 px-6 sm:px-12 lg:px-20">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 max-w-7xl mx-auto">
-        
+
         <motion.div
           className="flex-1 text-center lg:text-left space-y-6"
           initial="hidden"
@@ -67,15 +67,14 @@ export default function TermHero() {
         >
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[620px] lg:h-[620px]">
             <Image
-              src="/termbanner.webp" // change this to your actual image path
+              src="/termbanner.webp"
               alt="Terms and Condition"
-              fill
-              width=""
               height=""
+              width=""
               className="object-contain drop-shadow-xl"
               priority
             />
-          </div>
+         </div>
         </motion.div>
       </div>
 

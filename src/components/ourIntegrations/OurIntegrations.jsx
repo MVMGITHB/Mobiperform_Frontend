@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const OurIntegrations = () => {
   const logoVariant = {
@@ -81,6 +82,8 @@ const OurIntegrations = () => {
                 src={src}
                 alt={`integration-logo-${i + 1}`}
                 className="w-28 sm:w-36 md:w-44 lg:w-56 h-auto object-contain"
+                width={""}
+                height={""}
               />
             </motion.div>
           ))}

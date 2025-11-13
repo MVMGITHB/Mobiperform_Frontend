@@ -76,9 +76,9 @@ export default function WhyMobileMatters() {
                 transition={{ type: "spring", stiffness: 200 }}
                 className="shadow-md rounded-lg px-6 py-6 text-center w-full max-w-[200px] h-[170px] bg-[#EFF4FE]"
               >
-                <h3 className="text-3xl sm:text-[20px] lg:text-[45px] font-medium text-gray-900 popins">
+                <h2 className="text-3xl sm:text-[20px] lg:text-[45px] font-medium text-gray-900 popins">
                   <CountUp end={stat.value} />
-                </h3>
+                </h2>
                 <p className="text-base sm:text-lg lg:text-[22px] text-gray-600 mt-2 popins">
                   {stat.label}
                 </p>

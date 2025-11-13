@@ -129,6 +129,8 @@ export default function Navbar() {
               <img 
               src="/images/logo.webp" 
               alt="Logo" 
+              height=""
+              width=""
               className="h-full w-full object-contain" />
             </div>
           </Link>

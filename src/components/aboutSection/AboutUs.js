@@ -70,7 +70,7 @@ export default function AboutUs() {
           viewport={{ once: true }}
           className="mb-6"
         >
-          <h3 className="text-2xl font-semibold text-sky-700 mb-2">Our Mission</h3>
+          <h2 className="text-2xl font-semibold text-sky-700 mb-2">Our Mission</h2>
           <p className="text-gray-600 text-base md:text-lg leading-relaxed">
           To build a win-win system  where advertisers achieve higher ROAS through optimized user acquisition, and publishers maximize revenue with transparent, reliable monetization.
 

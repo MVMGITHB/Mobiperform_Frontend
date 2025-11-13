@@ -66,11 +66,9 @@ const HeroAbout = () => {
             at every step.
           </motion.p>
 
-          {/* 🌈 CTA Buttons */}
         
         </div>
 
-        {/* 📸 Right Side — Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}

@@ -59,7 +59,8 @@ export default function OurStrengths() {
             <motion.img
               src="/images/home/robothome.webp"
               alt="Robotic Arm"
-              sizes=""
+              height=""
+              width=""
               className="h-[500px]"
               initial={{ x: -80, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -71,7 +72,7 @@ export default function OurStrengths() {
           {/* RIGHT: Strength Items */}
           <div className="w-[70%] flex mt-[-90px] ml-[-100px]">
             {/* Heading */}
-            <motion.h4
+            <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -80,7 +81,7 @@ export default function OurStrengths() {
             >
               Our <br />
               <span className="text-blue-600">Strengths</span>
-            </motion.h4>
+            </motion.h2>
 
             {/* Middle illustration */}
             <motion.div
@@ -92,7 +93,8 @@ export default function OurStrengths() {
             >
               <img 
               src="/images/s1.webp"
-              sizes="" 
+              height="" 
+              width=""
               alt="Strengths Illustration" />
             </motion.div>
 
@@ -116,15 +118,17 @@ export default function OurStrengths() {
                     className="flex gap-5 items-center"
                   >
                     <div className="w-[400px] flex gap-3">
-                      <h4 className="text-[27px] text-black">{item.title}</h4>
-                      <h4 className="text-[27px] text-blue-600">
+                      <h2 className="text-[27px] text-black">{item.title}</h2>
+                      <h2 className="text-[27px] text-blue-600">
                         {item.highlight}
-                      </h4>
+                      </h2>
                     </div>
                     <motion.img
                       src={item.icon}
                       alt={item.title}
-                      whileHover={{ rotate: 10, scale: 1.1 }}
+                      height=""
+                      width=""               
+                       whileHover={{ rotate: 10, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 200 }}
                     />
                   </motion.div>
@@ -153,6 +157,7 @@ export default function OurStrengths() {
                     <motion.img
                       src={item.icon}
                       alt={item.title}
+                      sizes=""
                       whileHover={{ rotate: 10, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 200 }}
                     />

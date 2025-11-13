@@ -99,7 +99,7 @@ export default function WeOffer() {
             className="relative w-full h-[350px] sm:h-[450px] lg:h-[520px] rounded-2xl overflow-hidden "
           >
             <Image
-              src="/ourmission.png" // 👈 Replace with your image path
+              src="/ourmission.webp" // 👈 Replace with your image path
               alt="We Offer"
               fill
               className="object-cover"

@@ -62,7 +62,8 @@ export default function Register() {
         <img
           src="/images/loginandregisterpage/signInImage.webp" // <-- change image path here
           alt="Register illustration"
-          sizes=""
+          height=""
+          width=""
           className="w-full h-full lg:w-3/4 object-contain"
         />
       </div>

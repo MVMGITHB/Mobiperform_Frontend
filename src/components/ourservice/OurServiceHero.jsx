@@ -42,7 +42,7 @@ function OurServiceHero() {
 
                 {/* 🧠 Right Text Section */}
                 <div className="w-full lg:w-1/2 text-center lg:text-left">
-                    <motion.h2
+                    <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -50,7 +50,7 @@ function OurServiceHero() {
                         className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-8"
                     >
                         Our <span className='text-blue-600'>Services</span>
-                    </motion.h2>
+                    </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

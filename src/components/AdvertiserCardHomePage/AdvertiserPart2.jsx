@@ -43,8 +43,9 @@ const HowItWorks = () => {
           <img 
           src="/images/bg1.webp" 
           alt="bg-image"
-          sizes="" 
-          className=" w-full object-cover " />
+         height=""
+         width=""
+         className=" w-full object-cover " />
         </div>
 
         <div className="flex gap-4   justify-between mt-4 md:pl-[40px]">

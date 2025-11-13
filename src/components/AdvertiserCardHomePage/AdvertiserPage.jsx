@@ -23,7 +23,8 @@ const AdvertiserPage = () => {
             // converts png to webp;
               src="/images/advertiser/advertiserImage.webp"
               alt="Advertiser"
-              sizes=""
+              height=""
+              width=""
               className="w-full rounded-2xl object-cover"
             />
           </motion.div>

@@ -65,7 +65,8 @@ const Login = () => {
       <img 
       src="/images/loginandregisterpage/login.webp" 
       alt="login images"
-      sizes=""
+      height=""
+      width=""
       />
       </div>
       <div className='w-full lg:w-1/2 bg-[#0575E6]'>

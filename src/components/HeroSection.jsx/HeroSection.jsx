@@ -106,7 +106,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.2 }}
           viewport={{ once: true }}
           className="flex-1 flex justify-center mt-8 md:mt-0"
         >
