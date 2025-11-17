@@ -35,6 +35,8 @@ export default function Popup() {
         <Link
           href="https://www.cars24.com/sell-marketing/?utm_source=affiliate&utm_medium=email_ob&utm_campaign=mv2341&utm_term=super01"
           target="_blank"
+          rel="noopener noreferrer"
+
           className="relative"
         >
           <img

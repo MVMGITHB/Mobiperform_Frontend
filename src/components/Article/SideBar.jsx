@@ -65,6 +65,8 @@ export const SideBar = ({ pathname, data }) => {
           <>  <Link
             href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
             target="_blank"
+            rel="noopener noreferrer"
+
           >
             <Image
               src="/ajionew.webp"
@@ -80,6 +82,8 @@ export const SideBar = ({ pathname, data }) => {
           <Link
             href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
             target="_blank"
+            rel="noopener noreferrer"
+
           >
             <Image
               src="/ajionew.webp"

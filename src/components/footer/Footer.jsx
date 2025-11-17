@@ -142,6 +142,8 @@ export default function Footer() {
             <Link
               href="https://www.facebook.com/profile.php?id=61582288139690"
               target="_blank"
+              rel="noopener noreferrer"
+
               aria-label="Facebook page"
               title="Go to facebook page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -157,6 +159,8 @@ export default function Footer() {
             <Link
               href="https://www.linkedin.com/company/mobiperformads"
               target="_blank"
+              rel="noopener noreferrer"
+
               aria-label="LinkedIn"
               title="Go to linkedIn page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -172,6 +176,8 @@ export default function Footer() {
             <Link
               href="https://www.instagram.com/mobiperform/"
               target="_blank"
+              rel="noopener noreferrer"
+
               aria-label="Instagram page"
               title="Go to instagram page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -187,13 +193,15 @@ export default function Footer() {
              <Link
               href="https://x.com/mobiperform"
               target="_blank"
+              rel="noopener noreferrer"
+
               aria-label="X page"
               title="Go to x page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
                 className=""
               >
                 <FaTwitter />

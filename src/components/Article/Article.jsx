@@ -9,7 +9,7 @@ import Popup3 from '../Home/Pop3'
  const Article = ({data}) => {
 
 
-// console.log(data)
+console.log("mobi perform data " , data)
   
 
   const pathname = usePathname();

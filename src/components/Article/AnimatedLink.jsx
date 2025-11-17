@@ -1,11 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import BlinkingButton from './BlinkingButton';
-export default function AnimatedLink({text,link,apply}) {
-  const textColors = ['text-blue-300', 'text-violet-950', 'text-red-900'];
-  const borderColors = ['border-blue-300', 'border-violet-950', 'border-red-900'];
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import BlinkingButton from "./BlinkingButton";
+export default function AnimatedLink({ text, link, apply }) {
+  const textColors = ["text-blue-300", "text-violet-950", "text-red-900"];
+  const borderColors = [
+    "border-blue-300",
+    "border-violet-950",
+    "border-red-900",
+  ];
   const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
@@ -16,19 +20,18 @@ export default function AnimatedLink({text,link,apply}) {
   }, []);
 
   return (
-    <div className={`text-center p-1 border rounded-[10px] transition-colors duration-500 ${borderColors[colorIndex]}`}>
-
- <a
-  href={link}
-  target="_blank"
-  rel="noopener noreferrer"
-  className={`${textColors[colorIndex]} font-bold text-xl transition-colors duration-500`}
->
-  {text} <br />
-  <BlinkingButton apply={apply}/>
-</a>
-
-
+    <div
+      className={`text-center p-1 border rounded-[10px] transition-colors duration-500 ${borderColors[colorIndex]}`}
+    >
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${textColors[colorIndex]} font-bold text-xl transition-colors duration-500`}
+      >
+        {text} <br />
+        <BlinkingButton apply={apply} />
+      </a>
     </div>
   );
 }

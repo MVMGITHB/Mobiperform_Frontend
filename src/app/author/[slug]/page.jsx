@@ -2,9 +2,6 @@ import AuthorPage from "@/components/authorSection/authorProfile";
 import { base_url } from "@/components/Helper/helper";
 
 
- 
-
- 
 export async function generateMetadata({ params }) {
   const slug = await params.slug;
 

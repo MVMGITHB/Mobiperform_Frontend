@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { SideBar } from "./SideBar";
 import { RightSideBar } from "./RightSideBar";
 import { base_url } from "../Helper/helper";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import AnimatedLink from "./AnimatedLink";
 import axios from "axios";
@@ -12,11 +12,6 @@ import axios from "axios";
 import Image from "next/image";
 
 export const ArticleHome = ({ data }) => {
-
-
-
- 
-
   const pathname = usePathname();
   // console.log("pathname",data)
   const [showFull, setShowFull] = useState(false);
@@ -49,7 +44,6 @@ export const ArticleHome = ({ data }) => {
   // Usage
   const { firstPart, remainingPart } = splitAfterThirdParagraph(data.content);
 
-
   // formaet date
 
   const date = new Date(data?.createdAt);
@@ -64,7 +58,6 @@ export const ArticleHome = ({ data }) => {
 
   //  console.log("data home is ", data);
   //  console.log("remaiing " , remainingPart)
-
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -92,7 +85,7 @@ export const ArticleHome = ({ data }) => {
     },
     datePublished: formattedDate,
   };
-          
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -131,7 +124,6 @@ export const ArticleHome = ({ data }) => {
 
   // console.log("data for the authorSchema" ,authorSchema);
 
-
   useEffect(() => {
     axios
       .get(`${base_url}/api/blog/getAllBlog`)
@@ -153,29 +145,51 @@ export const ArticleHome = ({ data }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }}
       />
       <div className=" mx-auto p-4 flex flex-col md:flex-row gap-6">
-
         {/* asidbar comment */}
         {/* <div className=" w-full md:w-1/5 order-2 md:order-1">
           <SideBar pathname={pathname} data={data} />
         </div> */}
 
         <div className=" w-full md:w-4/5 mx-auto shadow-md p-4 order-1 md:order-2   overflow-y-auto scrollbar-hide">
-          <h1 className="text-2xl text-gray-900  font-bold text-start mb-4">
+          <h1 className="text-2xl md:text-5xl text-center text-gray-900 font-bold  mb-2 md:mb-4  mx-2 w-fit">
             {data.title}
           </h1>
-          <div className="w-full md:w-[1150px] h-auto md:h-[500px] relative rounded-md mb-4 overflow-hidden">
 
+          <div className="flex md:flex-row flex-col gap-3 justify-center mx-5 md:mb-16 ">
+            <h3 className="text-sm md:text-lg text-gray-700">
+              Author:{" "}
+              <strong>
+                {" "}
+                <Link
+                  href={`/author/${data?.author?.slug}`}
+                  className="text-blue-600"
+                >
+                  {data?.author?.name}
+                </Link>
+              </strong>
+            </h3>
+            <h3 className="text-sm md:text-lg text-gray-600">
+              Created At:{" "}
+              <strong>
+                {new Date(data?.author?.createdAt).toLocaleDateString()}
+              </strong>
+            </h3>
+            <h3 className="text-sm md:text-lg text-gray-600">
+              Updated At:{" "}
+              <strong>
+                {new Date(data?.author?.updatedAt).toLocaleDateString()}
+              </strong>
+            </h3>
+          </div>
+
+          <div className="w-full md:w-[1150px] h-auto md:h-[500px] relative rounded-md mb-4 overflow-hidden">
             {/* note : change to img tag to image tag give url in next.config website base url */}
             <img
               src={`${base_url}${data.image}`}
               alt="8th Pay Commission"
-              
               className="object-contain rounded-md"
-             
             />
           </div>
-
-
 
           {/* {
           data?.Ads[2]?(<>
@@ -201,13 +215,6 @@ export const ArticleHome = ({ data }) => {
           )
          } */}
 
-
-
-
-
-
-
-
           {/* {data ? (
           <>
             <div
@@ -221,8 +228,11 @@ export const ArticleHome = ({ data }) => {
         )} */}
 
           <div className="article px-2 ">
-            <div  dangerouslySetInnerHTML={{ __html: firstPart }}/>
-            <div id="center" dangerouslySetInnerHTML={{ __html: remainingPart }} />
+            <div dangerouslySetInnerHTML={{ __html: firstPart }} />
+            <div
+              id="center"
+              dangerouslySetInnerHTML={{ __html: remainingPart }}
+            />
             {/* {!showFull && (
 
               <div className="w-[200px] mx-auto">
@@ -236,39 +246,34 @@ export const ArticleHome = ({ data }) => {
 
             )} */}
 
+            {/* <div dangerouslySetInnerHTML={{ __html: remainingPart }} /> */}
 
+            <div>
+              {data?.faqs?.length > 0 && (
+                <>
+                  <h2 className="text-2xl text-gray-900 roboto-regular text-center font-bold mb-10 mt-10">
+                    Frequently Asked Questions
+                  </h2>
+                  {data.faqs.map((item) => (
+                    <div key={item._id} className="mb-4">
+                      <h3 className="font-semibold roboto-regular text-[20px] text-gray-900">
+                        Q: {item.ques}
+                      </h3>
+                      <p className="text-gray-800 roboto-regular text-[18px]">A: {item.ans}</p>
+                    </div>
+                  ))}
+                </>
+              )}
 
-              {/* <div dangerouslySetInnerHTML={{ __html: remainingPart }} /> */}
-
-
-
-              <div>
-
-
-                {data?.faqs?.length > 0 && (
-                  <>
-                    <h2 className="text-2xl text-center font-bold mb-4">
-                      Frequently Asked Questions
-                    </h2>
-                    {data.faqs.map((item) => (
-                      <div key={item._id} className="mb-4">
-                        <h3 className="font-semibold text-[20px] text-gray-900">
-                          Q: {item.ques}
-                        </h3>
-                        <p className="text-gray-800 text-[18px]">A: {item.ans}</p>
-                      </div>
-                    ))}
-                  </>
-                )}
-
-                {data?.conclusion && (
-                  <div className="mb-2 pt-4">
-                    {/* <h2 className="text-2xl text-gray-900 font-bold text-center ">Conclusion:</h2> */}
-                    <p className="text-[20px] text-black">{data.conclusion}</p>
-                  </div>
-                )}
-              </div>
-           
+              {data?.conclusion && (
+                <div className="mb-2 pt-4">
+                  <h3 className="text-2xl roboto-regular text-gray-900 font-bold text-center mb-2 ">
+                    Conclusion:
+                  </h3>
+                  <p className="text-[20px] roboto-regular text-black">{data.conclusion}</p>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* {
@@ -295,10 +300,9 @@ export const ArticleHome = ({ data }) => {
           )
          } */}
 
-
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 p-4">
             <div>
-              <h3 className="text-lg text-gray-700">
+              {/* <h3 className="text-lg text-gray-700">
                 Author:{" "}
                 <strong>
                   {" "}
@@ -309,7 +313,7 @@ export const ArticleHome = ({ data }) => {
                     {data?.author?.name}
                   </Link>
                 </strong>
-              </h3>
+              </h3> */}
               {/* <h3 className="text-sm text-gray-600">
               Created At:{" "}
               <strong>
@@ -333,7 +337,6 @@ export const ArticleHome = ({ data }) => {
 
           </div> */}
           </div>
-
 
           {/* <div>
           {data?.faqs?.length > 0 && (
@@ -359,9 +362,7 @@ export const ArticleHome = ({ data }) => {
             </div>
           )}
         </div> */}
-
         </div>
-
 
         {/* aside bar comment */}
         {/* <div className=" w-full md:w-1/5  order-3 md:order-3 ">

@@ -88,7 +88,7 @@ export default function Navbar() {
 
   const navItem = {
     hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
   const mobileMenu = {
@@ -103,14 +103,14 @@ export default function Navbar() {
 
   const mobileLink = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   return (
     <motion.nav
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="sticky top-0 z-50 w-full shadow-md tracking-widest bg-white text-black"
     >
       <motion.div

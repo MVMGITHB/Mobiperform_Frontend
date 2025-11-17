@@ -29,7 +29,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="flex-1 mt-8 sm:mt-10 md:mt-12 lg:mt-16 r md:text-left"
         >
@@ -44,7 +44,7 @@ export default function HeroSection() {
                   animate={{ y: "14%", opacity: 1 }}
                   exit={{ y: "50%", opacity: 0 }}
                   transition={{
-                    duration: 0.7,
+                    duration: 0.9,
                     ease: "easeInOut",
                   }}
                   className="absolute left-3 right-0"
@@ -69,7 +69,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: -100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <Link href="/advertiser">
