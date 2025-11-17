@@ -7,7 +7,7 @@ export const LeftSidebar = () => {
     <div className="w-full flex flex-col gap-6">
       {/* Ad Section 1 */}
       <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                  <Link href="https://spectrum.gotrackier.com/click?campaign_id=1201&pub_id=945&source=%7B1%7D" target="_blank">
+                  <Link href="https://spectrum.gotrackier.com/click?campaign_id=1201&pub_id=945&source=%7B1%7D" target="_blank" rel="noopener noreferrer">
 
        <Image
   src="./tataNew.webp"
@@ -21,7 +21,7 @@ export const LeftSidebar = () => {
 
       {/* Ad Section 2 */}
       <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                  <Link href="https://spectrum.gotrackier.com/click?campaign_id=1201&pub_id=945&source=%7B1%7D" target="_blank">
+                  <Link href="https://spectrum.gotrackier.com/click?campaign_id=1201&pub_id=945&source=%7B1%7D" target="_blank" rel="noopener noreferrer">
 
         <Image
   src="./tataNew.webp"
