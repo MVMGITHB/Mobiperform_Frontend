@@ -15,7 +15,6 @@ export const ArticleHome = ({ data }) => {
   const pathname = usePathname();
   // console.log("pathname",data)
   const [showFull, setShowFull] = useState(false);
-
   if (!data?.content) return null;
 
   // Split HTML content by first </p>
@@ -168,14 +167,14 @@ export const ArticleHome = ({ data }) => {
                 </Link>
               </strong>
             </h3>
-            <h3 className="text-sm text-center md:text-lg text-gray-600">
+            {/* <h3 className="text-sm text-center md:text-lg text-gray-600">
               Created At:{" "}
               <strong>
                 {new Date(data?.author?.createdAt).toLocaleDateString()}
               </strong>
-            </h3>
+            </h3> */}
             <h3 className="text-sm text-center md:text-lg text-gray-600">
-              Updated At:{" "}
+              Created At:{" "}
               <strong>
                 {new Date(data?.author?.updatedAt).toLocaleDateString()}
               </strong>
@@ -259,7 +258,9 @@ export const ArticleHome = ({ data }) => {
                       <h3 className="font-semibold roboto-regular text-[17pt] text-gray-900">
                         Q: {item.ques}
                       </h3>
-                      <p className="text-gray-800 roboto-regular text-[16pt]">A: {item.ans}</p>
+                      <p className="text-gray-800 roboto-regular text-[16pt]">
+                        A: {item.ans}
+                      </p>
                     </div>
                   ))}
                 </>
@@ -270,7 +271,9 @@ export const ArticleHome = ({ data }) => {
                   <h3 className="text-2xl roboto-regular text-gray-900 font-bold text-center mb-2 ">
                     Conclusion:
                   </h3>
-                  <p className="text-[16pt] roboto-regular text-black">{data.conclusion}</p>
+                  <p className="text-[16pt] roboto-regular text-black">
+                    {data.conclusion}
+                  </p>
                 </div>
               )}
             </div>

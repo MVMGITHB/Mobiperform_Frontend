@@ -111,7 +111,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full shadow-md tracking-widest bg-white text-black"
+      className="sticky top-0 z-50 w-full shadow-md tracking-widest bg-black text-white"
     >
       <motion.div
         variants={navContainer}
@@ -127,7 +127,7 @@ export default function Navbar() {
           <Link href="/">
             <div className="h-[50px] md:h-[80px] w-[100px] md:w-[150px] cursor-pointer">
               <img
-                src="/images/logo.webp"
+                src="/mobiperform-new-logo.png"
                 alt="Logo"
                 height=""
                 width=""
@@ -148,7 +148,7 @@ export default function Navbar() {
                 onClick={() => setActive(link.name)}
                 className={`relative group transition-all duration-300 ${active === link.name
                   ? "text-blue-600 font-semibold"
-                  : "text-gray-800 hover:text-blue-600"
+                  : "text-white hover:text-blue-600"
                   }`}
               >
                 {link.name}
