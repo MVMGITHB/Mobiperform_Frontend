@@ -70,7 +70,9 @@ export default function Register() {
         <img
           src="/images/loginandregisterpage/signInImage.webp"
           alt="Register illustration"
-          className="w-full h-full lg:w-3/4 object-contain"
+          width=""
+          height=""
+                    className="w-full h-full lg:w-3/4 object-contain"
         />
       </motion.div>
 

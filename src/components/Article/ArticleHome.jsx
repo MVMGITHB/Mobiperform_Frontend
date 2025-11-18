@@ -187,7 +187,7 @@ export const ArticleHome = ({ data }) => {
             <img
               src={`${base_url}${data.image}`}
               alt="8th Pay Commission"
-              className="object-contain rounded-md"
+              className="object-cover rounded-md"
             />
           </div>
 

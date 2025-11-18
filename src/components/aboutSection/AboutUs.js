@@ -27,7 +27,8 @@ export default function AboutUs() {
         <img
           src="/aboutbanner.webp"
           alt="About illustration"
-          sizes=""
+          width=""
+          height=""
           className="h-130 object-contain"
         />
       </motion.div>

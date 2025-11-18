@@ -59,7 +59,6 @@ const Login = () => {
 
   return (
     <div className="flex flex-col justify-center items-center lg:flex-row md:flex-row">
-
       {/* IMAGE with 3D animation */}
       <motion.div
         className="w-full lg:w-1/2 bg-white flex justify-center items-center"
@@ -71,6 +70,8 @@ const Login = () => {
         <img
           src="/images/loginandregisterpage/login.webp"
           alt="login images"
+          height=""
+          width=""
         />
       </motion.div>
 

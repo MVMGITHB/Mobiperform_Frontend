@@ -40,12 +40,13 @@ const HowItWorks = () => {
         </div>
 
         <div className="w-[90%] mx-auto">
-          <img 
-          src="/images/bg1.webp" 
-          alt="bg-image"
-         height=""
-         width=""
-         className=" w-full object-cover " />
+          <img
+            src="/images/bg1.webp"
+            alt="bg-image"
+            height=""
+            width=""
+            className=" w-full object-cover "
+          />
         </div>
 
         <div className="flex gap-4   justify-between mt-4 md:pl-[40px]">
@@ -60,14 +61,18 @@ const HowItWorks = () => {
             <h6 className="text-blue-600 md:text-xl font-medium text-center ">
               Optimization
             </h6>
-            <p className=" text-black md:text-xl text-center">AI + data-driven campaigns </p>
+            <p className=" text-black md:text-xl text-center">
+              AI + data-driven campaigns 
+            </p>
           </div>
 
           <div className="">
             <h6 className="text-blue-600 md:text-xl font-medium text-center ">
               Growth
             </h6>
-            <p className=" text-black md:text-xl text-center">from  awareness  to loyalty  </p>
+            <p className=" text-black md:text-xl text-center">
+              from awareness to loyalty  
+            </p>
           </div>
         </div>
       </div>

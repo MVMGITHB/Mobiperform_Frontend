@@ -94,7 +94,6 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        {/* Legal */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
@@ -103,7 +102,6 @@ export default function Footer() {
           transition={{ delay: 0.2 }}
         >
           <h3 className="text-white font-semibold mb-4">Legal</h3>
-          {/* change ancher tag to link tag for seo  */}
           <ul className="space-y-2">
             <li>
               <Link
@@ -137,13 +135,11 @@ export default function Footer() {
           transition={{ delay: 0.3 }}
         >
           <h3 className="text-white font-semibold mb-4">Follow us</h3>
-          {/* change ancher tag to Link tag  */}
           <div className="flex space-x-2 text-lg">
             <Link
               href="https://www.facebook.com/profile.php?id=61582288139690"
               target="_blank"
               rel="noopener noreferrer"
-
               aria-label="Facebook page"
               title="Go to facebook page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -160,7 +156,6 @@ export default function Footer() {
               href="https://www.linkedin.com/company/mobiperformads"
               target="_blank"
               rel="noopener noreferrer"
-
               aria-label="LinkedIn"
               title="Go to linkedIn page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -177,7 +172,6 @@ export default function Footer() {
               href="https://www.instagram.com/mobiperform/"
               target="_blank"
               rel="noopener noreferrer"
-
               aria-label="Instagram page"
               title="Go to instagram page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
@@ -190,11 +184,10 @@ export default function Footer() {
                 <FaInstagram />
               </motion.div>
             </Link>
-             <Link
-              href="https://x.com/mobiperform"
+            <Link
+              href="https://x.com/mobiperform/"
               target="_blank"
               rel="noopener noreferrer"
-
               aria-label="X page"
               title="Go to x page"
               className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition"
