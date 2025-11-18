@@ -58,7 +58,6 @@ export default function Register() {
 
   return (
     <div className="flex flex-col justify-center items-center lg:flex-row md:flex-row">
-
       {/* LEFT SIDE IMAGE - 3D coming from RIGHT */}
       <motion.div
         className="w-full mt-4 lg:w-1/2 lg:mt-0 bg-white flex justify-center items-center"
@@ -72,7 +71,7 @@ export default function Register() {
           alt="Register illustration"
           width=""
           height=""
-                    className="w-full h-full lg:w-3/4 object-contain"
+          className="w-full h-full lg:w-3/4 object-contain"
         />
       </motion.div>
 
@@ -128,7 +127,7 @@ export default function Register() {
                     value={form.email}
                     onChange={handleChange}
                     required
-                    placeholder="example@email.com"
+                    placeholder="Enter Gmail"
                     className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
                 </div>
@@ -149,7 +148,7 @@ export default function Register() {
                       setForm({ ...form, phone: cleaned });
                     }}
                     required
-                    placeholder="+91-9999999999"
+                    placeholder="Enter Phone"
                     maxLength="15"
                     className="w-full px-4 py-3 border text-black border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   />
@@ -183,7 +182,9 @@ export default function Register() {
                 <label className="text-sm text-gray-600 leading-snug">
                   I agree to receive communication regarding offers and products
                   through{" "}
-                  <span className="font-medium">Call, E-mail, SMS, WhatsApp</span>{" "}
+                  <span className="font-medium">
+                    Call, E-mail, SMS, WhatsApp
+                  </span>{" "}
                   etc. from <span className="font-medium">mobiperform.com</span>{" "}
                   & its partners.
                 </label>
@@ -201,7 +202,10 @@ export default function Register() {
 
             <p className="text-center text-gray-600 text-sm mt-6">
               Already have an account?{" "}
-              <a href="/login" className="text-blue-600 font-medium hover:underline">
+              <a
+                href="/login"
+                className="text-blue-600 font-medium hover:underline"
+              >
                 Login
               </a>
             </p>

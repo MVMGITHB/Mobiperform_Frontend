@@ -156,7 +156,7 @@ export const ArticleHome = ({ data }) => {
           </h1>
 
           <div className="flex md:flex-row flex-col gap-3 justify-center mx-5 md:mb-16 ">
-            <h3 className="text-sm md:text-lg text-gray-700">
+            <h3 className="text-sm text-center md:text-lg text-gray-700">
               Author:{" "}
               <strong>
                 {" "}
@@ -168,13 +168,13 @@ export const ArticleHome = ({ data }) => {
                 </Link>
               </strong>
             </h3>
-            <h3 className="text-sm md:text-lg text-gray-600">
+            <h3 className="text-sm text-center md:text-lg text-gray-600">
               Created At:{" "}
               <strong>
                 {new Date(data?.author?.createdAt).toLocaleDateString()}
               </strong>
             </h3>
-            <h3 className="text-sm md:text-lg text-gray-600">
+            <h3 className="text-sm text-center md:text-lg text-gray-600">
               Updated At:{" "}
               <strong>
                 {new Date(data?.author?.updatedAt).toLocaleDateString()}
@@ -182,7 +182,7 @@ export const ArticleHome = ({ data }) => {
             </h3>
           </div>
 
-          <div className="w-full md:w-[1150px] h-auto md:h-[500px] relative rounded-md mb-4 overflow-hidden">
+          <div className="w-full md:w-[1150px] h-auto md:h-[650px] relative rounded-md mb-4 overflow-hidden">
             {/* note : change to img tag to image tag give url in next.config website base url */}
             <img
               src={`${base_url}${data.image}`}
@@ -256,10 +256,10 @@ export const ArticleHome = ({ data }) => {
                   </h2>
                   {data.faqs.map((item) => (
                     <div key={item._id} className="mb-4">
-                      <h3 className="font-semibold roboto-regular text-[20px] text-gray-900">
+                      <h3 className="font-semibold roboto-regular text-[17pt] text-gray-900">
                         Q: {item.ques}
                       </h3>
-                      <p className="text-gray-800 roboto-regular text-[18px]">A: {item.ans}</p>
+                      <p className="text-gray-800 roboto-regular text-[16pt]">A: {item.ans}</p>
                     </div>
                   ))}
                 </>
@@ -270,7 +270,7 @@ export const ArticleHome = ({ data }) => {
                   <h3 className="text-2xl roboto-regular text-gray-900 font-bold text-center mb-2 ">
                     Conclusion:
                   </h3>
-                  <p className="text-[20px] roboto-regular text-black">{data.conclusion}</p>
+                  <p className="text-[16pt] roboto-regular text-black">{data.conclusion}</p>
                 </div>
               )}
             </div>
