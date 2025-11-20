@@ -91,6 +91,7 @@ export default function AboutUs() {
           </p>
         </motion.div>
       </motion.div>
+      
     </section>
   );
 }

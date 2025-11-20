@@ -143,8 +143,9 @@ export default function WhyMobileMatters() {
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 0.9, ease: "easeInOut" }}
         viewport={{ once: true }}
-        className="w-full border-t-2 border-black my-16 origin-left"
+        className="w-full border-t-2 border-black mt-16 origin-left"
       ></motion.div>
+      
     </motion.section>
   );
 }

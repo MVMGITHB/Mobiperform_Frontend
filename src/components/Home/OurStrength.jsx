@@ -30,6 +30,13 @@ export default function OurStrengths() {
 
   return (
     <>
+     <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.9, ease: "easeInOut" }}
+        viewport={{ once: true }}
+        className="w-full border-t-2 border-black mb-3 origin-right"
+      ></motion.div>
       {/* 👇 Mobile-only image */}
       <div className="block lg:hidden justify-center mx-auto">
         <Image
