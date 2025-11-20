@@ -15,7 +15,7 @@ export default function AboutUs() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-20 py-16 bg-white overflow-hidden">
+    <section className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-20 py-16 bg-white overflow-hidden bg-gradient-to-r from-blue-400 via-blue-100/20 to-blue-50">
       {/* Left Image */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}

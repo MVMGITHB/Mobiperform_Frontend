@@ -39,7 +39,7 @@ export default function WhyUs() {
   const title = "Why Choose Mobiperform?".split(" ");
 
   return (
-    <section className="relative bg-gray-50 text-gray-800 py-16 sm:py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-gray-50 text-gray-800 py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-l from-blue-400 via-blue-100/20 to-blue-50">
       {/* Animated background gradient glow */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-blue-100 via-transparent to-blue-100 opacity-40 blur-3xl"
