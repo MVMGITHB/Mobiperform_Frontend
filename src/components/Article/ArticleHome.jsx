@@ -174,9 +174,16 @@ export const ArticleHome = ({ data }) => {
               </strong>
             </h3> */}
             <h3 className="text-sm text-center md:text-lg text-gray-600">
-              Created At:{" "}
+              Updated At:{" "}
               <strong>
-                {new Date(data?.author?.updatedAt).toLocaleDateString()}
+                {/* {new Date(data?.author?.updatedAt).toLocaleDateString()} */}
+                <time dateTime={data?.createdAt}>
+                {new Intl.DateTimeFormat("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                }).format(new Date(data?.createdAt))}
+              </time>
               </strong>
             </h3>
           </div>
