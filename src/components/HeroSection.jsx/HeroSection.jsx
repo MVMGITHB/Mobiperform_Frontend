@@ -7,14 +7,32 @@ import { useEffect, useState } from "react";
 export default function HeroSection() {
   const texts = ["ROI", "Reach", "Power "];
   const [index, setIndex] = useState(0);
+  const [offset, setOffset] = useState("14%"); // default for laptop
+
 
   // Auto-change text every 2 seconds (a bit slower for smoother swipe)
   useEffect(() => {
     // console.log("use Efffect cakled ")
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % texts.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        setOffset("1%");   // phone
+      } else {
+        setOffset("14%");  // laptop
+      }
+    };
+
+    handleResize(); // run once
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // console.log("index ", index, texts[index])
@@ -33,15 +51,15 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="flex-1 mt-8 sm:mt-10 md:mt-12 lg:mt-16 r md:text-left"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-snug  sm:text-left">
+          <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-snug  sm:text-left">
             With Mobiperform <br />
             <span className=" md:inline-block sm:inline-block">High</span>
-            <span className="= md:inline-block sm:inline-block text-blue-600 relative h-[1.2em] ">
+            <span className="= md:inline-block sm:inline-block text-white md:text-blue-600 relative h-[1.2em] ">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={texts[index]}
                   initial={{ y: "-40%", opacity: 0 }}
-                  animate={{ y: "14%", opacity: 1 }}
+                  animate={{ y: offset, opacity: 1 }}
                   exit={{ y: "50%", opacity: 0 }}
                   transition={{
                     duration: 0.9,
@@ -51,15 +69,17 @@ export default function HeroSection() {
                 >
                   {texts[index]}
                 </motion.span>
+               
               </AnimatePresence>
             </span>
+           
           </h1>
 
 
 
 
 
-          <p className="mt-4 sm:mt-6 text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl max-w-md md:max-w-2xl tracking-wide">
+          <p className="mt-4 sm:mt-6 text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl max-w-md md:max-w-2xl tracking-wide">
             Helping brands scale apps & publishers maximize traffic with
             AI-powered performance marketing solutions.
           </p>
@@ -76,7 +96,7 @@ export default function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="px-6 cursor-pointer sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-sm sm:text-base md:text-lg font-medium rounded-2xl shadow-[0_6px_12px_2px_rgba(0,0,0,0.25)] hover:bg-blue-700 transition"
+                  className="px-6 cursor-pointer sm:px-8 md:px-12 lg:px-14 py-2 sm:py-3 md:py-4 bg-blue-600 text-white text-2xl sm:text-base md:text-lg font-medium rounded-2xl shadow-[0_6px_12px_2px_rgba(0,0,0,0.25)] hover:bg-blue-700 transition"
                 >
                   For Advertisers
                 </motion.button>
@@ -93,7 +113,7 @@ export default function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
-                  className="px-6 sm:px-8 md:px-12 cursor-pointer  lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-sm sm:text-base md:text-lg font-medium rounded-lg text-black hover:bg-gray-100 transition"
+                  className="px-6 sm:px-8 md:px-12 cursor-pointer  lg:px-14 py-2 sm:py-3 md:py-4 border border-gray-400 text-2xl sm:text-base md:text-lg font-medium rounded-lg text-black hover:bg-gray-100 transition"
                 >
                   For Publishers
                 </motion.button>
@@ -108,14 +128,14 @@ export default function HeroSection() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.2, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex-1 flex justify-center mt-8 md:mt-0"
+          className="flex-1 flex justify-center mt-2 md:mt-0"
         >
           <Image
             src="/images/home/hero.webp"
             alt="Mobile Performance Marketing"
             width={700}
             height={600}
-            className="drop-shadow-2xl w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-[900px] object-contain"
+            className="drop-shadow-2xl w-full max-w-[450px] sm:max-w-sm md:max-w-md lg:max-w-2xl xl:max-w-[900px] object-contain"
             priority
           />
         </motion.div>

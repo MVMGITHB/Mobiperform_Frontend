@@ -125,7 +125,7 @@ export default function Navbar() {
           transition={{ type: "spring", stiffness: 200 }}
         >
           <Link href="/">
-            <div className="h-[50px] md:h-[80px] w-[100px] md:w-[150px] cursor-pointer">
+            <div className="h-[70 px] md:h-[80px] w-[100px] md:w-[150px] cursor-pointer">
               <img
                 src="/mobiperform-new-logo.png"
                 alt="Logo"
